@@ -1,0 +1,102 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastrar produtos</title>
+
+    <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--<link href="./lib/bootswatch/journal/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">-->
+    <link href="./lib/estilos.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1><span class="glyphicon glyphicon-phone"></span> Produto <small>Cadastrar</small></h1>
+      </div>
+
+      <form role="form" method="post" action="produtos-cadastrar.php" class="container-fluid">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label class="control-label" for="fcategoria">Categoria</label>
+              <select id="fcategoria" name="idcategoria" class="form-control" required>
+                <option value="0">Selecione a categoria</option>
+                <option value="1" >Computadores</option>
+                <option value="2" >Monitores</option>
+                <option value="3" >Acessórios</option>
+                <option value="4" >Teste</option>
+                <option value="5" >Lampadas</option>
+              </select>
+
+              <span class="help-block">A categoria do produto facilita a localização</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label class="control-label" for="freferencia">Referência</label>
+              <input type="text" class="form-control" id="freferencia" name="freferencia" placeholder="Ex. 000001" value="">
+            </div>
+          </div>
+
+          <div class="col-xs-8">
+            <div class="form-group">
+              <label class="control-label" for="fdescricao">Descrição</label>
+              <input type="text" class="form-control" id="fdescricao" name="descricao" placeholder="Descrição do produto" value="">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label class="control-label" for="fpreco">Preço</label>
+              <div class="input-group">
+                <span class="input-group-addon">R$</span>
+                <input type="text" class="form-control" id="fpreco" name="preco" placeholder="Preço" value="" required>
+              </div>
+              <span class="help-block">Separe decimal com um ponto (R$1.00)</span>
+            </div>
+          </div>
+
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label class="control-label" for="fsaldo">Saldo</label>
+              <input type="number" class="form-control" id="fsaldo" name="saldo" placeholder="Estoque" value="0" required>
+
+              <span class="help-block">Valor inteiro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <div class="checkbox">
+                <label for="fativo">
+                  <input type="checkbox" name="ativo" id="fativo" checked> Produto ativo
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="reset" class="btn btn-danger">Cancelar</button>
+      </form>
+
+    </div>
+
+    <!--<script src="./lib/jquery.js"></script>-->
+    <!--<script src="./lib/bootstrap/js/bootstrap.min.js"></script>-->
+
+  </body>
+  </html>

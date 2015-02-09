@@ -1,0 +1,102 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastrar produtos</title>
+
+    <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--<link href="./lib/bootswatch/journal/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">-->
+    <link href="./lib/estilos.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="">
+
+      <div class="">
+        <h1><span class=""></span> Produto <small>Cadastrar</small></h1>
+      </div>
+
+      <form role="form" method="post" action="produtos-cadastrar.php" class="">
+
+        <div class="">
+          <div class="">
+            <div class="">
+              <label class="" for="fcategoria">Categoria</label>
+              <select id="fcategoria" name="idcategoria" class="" required>
+                <option value="0">Selecione a categoria</option>
+                <option value="1" >Computadores</option>
+                <option value="2" >Monitores</option>
+                <option value="3" >Acessórios</option>
+                <option value="4" >Teste</option>
+                <option value="5" >Lampadas</option>
+              </select>
+
+              <span class="">A categoria do produto facilita a localização</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="">
+            <div class="">
+              <label class="" for="freferencia">Referência</label>
+              <input type="text" class="" id="freferencia" name="freferencia" placeholder="Ex. 000001" value="">
+            </div>
+          </div>
+
+          <div class="">
+            <div class="">
+              <label class="" for="fdescricao">Descrição</label>
+              <input type="text" class="" id="fdescricao" name="descricao" placeholder="Descrição do produto" value="">
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="">
+            <div class="">
+              <label class="" for="fpreco">Preço</label>
+              <div class="">
+                <span class="">R$</span>
+                <input type="text" class="" id="fpreco" name="preco" placeholder="Preço" value="" required>
+              </div>
+              <span class="">Separe decimal com um ponto (R$1.00)</span>
+            </div>
+          </div>
+
+          <div class="">
+            <div class="">
+              <label class="" for="fsaldo">Saldo</label>
+              <input type="number" class="" id="fsaldo" name="saldo" placeholder="Estoque" value="0" required>
+
+              <span class="">Valor inteiro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="">
+            <div class="">
+              <div class="">
+                <label for="fativo">
+                  <input type="checkbox" name="ativo" id="fativo" checked> Produto ativo
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="">Cadastrar</button>
+        <button type="reset" class="">Cancelar</button>
+      </form>
+
+    </div>
+
+    <!--<script src="./lib/jquery.js"></script>-->
+    <!--<script src="./lib/bootstrap/js/bootstrap.min.js"></script>-->
+
+  </body>
+  </html>
