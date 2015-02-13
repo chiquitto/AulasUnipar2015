@@ -1,0 +1,32 @@
+Em uma folha almaço responder:
+
+Informações do cliente
+Nome completo: xx
+Endereço: xxx
+Cidade/UF: xxx
+
+Informações do negócio do cliente
+Nome: 
+Endereço: 
+Cidade/UF: 
+
+Tipo de produto: massas, comidas caseiras, brinquedos, bonecos de ação, fantasias, roupas, ferramentas, ...
+Faixa de preço dos produto: min ~ max
+Qualidade dos produtos
+
+Público alvo do negócio do cliente
+Classe: A, B, C, ...
+Região: Bairro, Cidade, Região...
+Faixa etária: x ~ y anos
+Formação: Ensino médio, Superior, ...
+
+Informações para o site
+O que pretende com o site? vendas, contato com o cliente, catalogo de produtos, institucional, ...
+Quais os sites concorrentes? 3 no minimo
+
+Observações do cliente: "Usar várias imagens", "quero a minha logo bem grande"
+
+==
+
+Desenvolver um rascunho de uma página inicial para um site do cliente.
+Seguir o processo iterativo. Fazer questionamentos para o cliente, etc.
