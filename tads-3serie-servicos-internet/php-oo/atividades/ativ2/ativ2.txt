@@ -1,0 +1,6 @@
+Escreva um programa que simule o carrinho de compras de um site:
+
+1. Tenha alguns produtos disponíveis.
+2. Adicione produtos no carrinho.
+3. Liste os produtos que estão no carrinho.
+4. Mostre o total a ser pago.
