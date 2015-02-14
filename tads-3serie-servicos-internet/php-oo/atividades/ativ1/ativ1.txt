@@ -1,9 +1,26 @@
 Em um determinado banco, existem três tipos de conta:
 
 Conta Corrente: possui um saldo.
-Conte Especial: possui um saldo e um limite de crédito com juros de 10% ao mês.
+Conta Especial: possui um saldo e um limite de crédito com juros de 10% ao mês.
 Conta Poupança: possui um saldo e um rendimento de 0.5% ao mês.
 
 Escreva um programa que simule uma conta de cada tipo e, na virada do mês, mostre qual o saldo delas.
 
 Não esqueça de que cada tipo de conta possui, também, um número que a identifica e o nome do correntista.
+
+
+saque
+deposito
+pegarSaldo
+
+definirNumero
+pegarNumero
+definirCliente
+pegarCliente
+
+virarMes
+
+
+
+
+
