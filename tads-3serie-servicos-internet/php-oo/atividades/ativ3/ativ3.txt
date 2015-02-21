@@ -1,0 +1,16 @@
+Criar um sistema que calcula a area de figuras geométricas, como Quadrados, Triangulos e Círculos;
+
+Todos as figuras possuem um método chamado calculaArea que é definido por uma interface AreaCalculavel;
+
+Criar as classes Quadrado, Triangulo e Circulo que implementa AreaCalculavel;
+
+Todas as classes de figuras geometricas devem possuir metodos para definir os valores necessários para calcular a área da figura.
+
+Ao fim criar uma classe Teste com metodo mostrarInformacoes.
+Este metodo deve receber um elemento do tipo AreaCalculavel apenas.
+
+
+Quadrado: lado * lado
+Retangulo: largura * altura
+Triangulo: largura * altura / 2;
+Circulo: PI * raio ao quadrado;
