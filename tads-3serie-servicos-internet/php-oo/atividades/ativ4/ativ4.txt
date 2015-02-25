@@ -1,0 +1,10 @@
+Um banco disponibiliza a criação de contas para seus clientes, e permite aos mesmos que eles escolham o número de suas contas, com uma restrição, se o número já existir a conta não pode ser criada.
+
+Criar a classe conta com os atributos:
+. número da conta;
+. nome do cliente.
+
+Implementar os getters para os atributos;
+
+Na classe Conta criar um método estático indicando se existe alguma conta com determinado número.
+
