@@ -1,0 +1,22 @@
+Dada a classe:
+
+class Configuracoes {
+  private $config = array(
+    'FUSO' => '+3',
+    'NOME_SISTEMA' => 'Loja do seu Zeh',
+    'SALDO_MIN' => 5,
+  );
+
+  public function getConfig($indice) {
+    return $this->config[$indice];
+  }
+}
+
+Suponha que estamos desenvolvendo um sistema que possui configurações globais obtidas a
+partir de um arquivo de propriedades. Essas configurações podem ser armazenadas em um objeto.
+
+Não desejamos que existam mais do que um objeto dessa classe ao mesmo tempo no sistema.
+Para garantir essa restrição, podemos tornar o construtor da classe Configuracao privado e implementar um método estático que controle a criação do único objeto que deve existir e ao mesmo tempo nos forneça um ponto Global de acesso à instancia da classe.
+
+. Impeça que mais de um objeto exista ao mesmo tempo no sistema;
+. Escreva na tela todas configurações existentes na classe;
