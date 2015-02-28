@@ -1,0 +1,3 @@
+Imagine que tenha uma classe Conexao e quero garantir que só existe um objeto desse tipo em toda a memória. Então teremos de fazer nossa classe de tal maneira que ela respeite essa nossa necessidade.
+
+Criar uma classe Conexao que permita que ela seja criada apenas 1 vez.
