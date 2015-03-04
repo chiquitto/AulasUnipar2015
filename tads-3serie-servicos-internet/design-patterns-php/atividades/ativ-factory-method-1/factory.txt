@@ -1,0 +1,10 @@
+Padrão Factory Method define uma interface para criar um objeto, mas permite a fabrica decidir qual classe instanciar. O Factory Method permite a uma classe definir a instanciação para subclasses.
+
+Criar uma fabrica de Conexoes com BD.
+Não se esqueça que todas as Conexoes devem fazer pelo menos as operações CRUD.
+
+Antes de comecar precisamos decidir quais serão os seguintes componentes:
+Produto: Conexao
+Produtos Concretos: ConexaoBdMysql, ConexaoBdSqlite
+Fabrica: FabricaConexao
+

@@ -1,0 +1,10 @@
+Criar uma fabrica de Automóveis.
+Os automóveis Aceleram, Freiam, Viram, Ligam e Desligam.
+A fabrica fabrica 3 diferentes modelos: 1000cc, 1400cc e 2000cc
+
+Antes de comecar precisamos decidir quais serão os seguintes componentes:
+Produto: 
+Produtos Concretos: 
+Fabrica: 
+
+Por fim, crie 5 automoveis usando a fabrica
