@@ -4,9 +4,13 @@ Cada equipe ficará responsável pela reprodução de uma tela (modelo), que ser
 
 A apresentação das telas será feita por ordem determinada pelo professor no dia 17/03.
 
+Os arquivos do trabalho deverão ser enviados para o endereço
+chiquitto+2serie-bootstrap@unipar.br
+no máximo no dia seguinte da apresentação.
+
 Cada equipe poderá conter no máximo 4 alunos.
 
-Valor: até 0.5 pontos para os participantes presentes.
+Valor: até 1.0 pontos para os participantes presentes.
 
 Lista das equipes e Modelos:
 https://docs.google.com/spreadsheets/d/1tnkW70B47CmeK3Ox5oLJDU-3ueJmscbUJbloEZ4a6D4/edit?usp=sharing
