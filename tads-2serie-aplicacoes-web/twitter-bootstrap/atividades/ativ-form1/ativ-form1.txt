@@ -1,0 +1,12 @@
+Objetivo: Utilizando HTML e a biblioteca Twitter Bootstrap reproduzir as telas que foram atribuidas para cada equipe.
+
+Cada equipe ficará responsável pela reprodução de uma tela (modelo), que será sorteada pelo professor.
+
+A apresentação das telas será feita por ordem determinada pelo professor no dia 17/03.
+
+Cada equipe poderá conter no máximo 4 alunos.
+
+Valor: até 0.5 pontos para os participantes presentes.
+
+Lista das equipes e Modelos:
+https://docs.google.com/spreadsheets/d/1tnkW70B47CmeK3Ox5oLJDU-3ueJmscbUJbloEZ4a6D4/edit?usp=sharing
