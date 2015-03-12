@@ -9,6 +9,15 @@
     <body>
         <h1><?php echo $this->getValor('nome'); ?></h1>
         
+        <?php
+        $erro = $this->getValor('erro');
+        if ($erro != '') {
+        ?>
+        <p>Mensagem de erro: <?php echo $erro; ?></p>
+        <?php
+        }
+        ?>
+        
         <form action="categoria-cadastrar.php" method="post">
             Categoria:
             <input type="text" name="categoria">

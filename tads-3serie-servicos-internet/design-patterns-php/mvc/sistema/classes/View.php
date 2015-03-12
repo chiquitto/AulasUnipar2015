@@ -4,7 +4,10 @@ class View {
     private $valores = array();
     
     public function getValor ($nome) {
-        return $this->valores[$nome];
+        if (isset($this->valores[$nome])) {
+            return $this->valores[$nome];
+        }
+        return null;
     }
     
     public function setValor ($nome, $valor) {
