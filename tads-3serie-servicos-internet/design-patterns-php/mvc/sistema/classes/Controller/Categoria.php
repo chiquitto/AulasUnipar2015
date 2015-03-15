@@ -8,21 +8,19 @@ extends Controller {
         
         if ($_POST) {
             $categoria = $_POST['categoria'];
+            $modelo = new Model_Categoria();
+            $voCategoria = new Vo_Categoria();
+            $voCategoria->categoria = $categoria;
+            try{
+                $modelo->cadastrar($voCategoria);
+            }
+            catch(Exception_Categoria_Vazio $ex){
+                $view->setValor("erro",
+                        "Favor informe categoria!");
+
+              
+            }
             
-            if ($categoria == '') {
-                $view->setValor('erro',
-                        'Preencha o nome da categoria');
-            }
-            else
-            {
-                $dao = new Dao_Categoria();
-                $vo = new Vo_Categoria();
-                $vo->categoria = $categoria;
-                $vo->idcategoria = 1;
-                //$dao->create($vo);
-                //$dao->delete('id = 1');
-                $dao->update($vo);
-            }
         }
         
         $view->setValor('nome', 'Unipar 11/03');

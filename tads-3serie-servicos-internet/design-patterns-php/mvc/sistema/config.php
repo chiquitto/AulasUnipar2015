@@ -14,7 +14,7 @@ define('CLASSES', PATH . '/classes');
 */
 function __autoload($className)
 {
-	$className = ltrim($className, '\\');
+    $className = ltrim($className, '\\');
     $fileName  = '';
     $namespace = '';
     if ($lastNsPos = strrpos($className, '\\')) {
