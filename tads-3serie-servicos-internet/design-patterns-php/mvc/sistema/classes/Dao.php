@@ -31,9 +31,6 @@ abstract class Dao {
         ;
 
         try {
-            echo $sql;
-            exit;
-            
             $con = Conexao::getInstance();
 
             $sqlPreparada = $con->prepare($sql);
@@ -96,8 +93,6 @@ abstract class Dao {
                 . ' SET ' . join(', ', $parametros)
                 . ' WHERE ' . $where
         ;
-        echo $sql;
-        exit;
         $con = Conexao::getInstance();
 
         $stmt = $con->prepare($sql);
@@ -110,8 +105,6 @@ abstract class Dao {
                 . $this->tabela
                 . ' WHERE ' . $where
         ;
-        echo $sql;
-        exit;
         $con = Conexao::getInstance();
         return $con->query($sql);
     }
