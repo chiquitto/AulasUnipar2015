@@ -1,7 +1,6 @@
 <?php
 
-//define('PATH', 'C:\Program Files (x86)\EasyPHP-12.1\www\sistema');
-define('PATH', '/home/alisson/Trabalho/AulasUnipar2015/tads-3serie-servicos-internet/design-patterns-php/mvc/sistema');
+define('PATH', 'C:\Program Files (x86)\EasyPHP-12.1\www\sistema');
 
 define('TELAS', PATH . '/telas');
 define('CLASSES', PATH . '/classes');

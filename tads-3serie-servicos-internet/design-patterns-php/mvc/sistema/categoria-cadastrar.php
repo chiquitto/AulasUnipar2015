@@ -3,4 +3,4 @@
 require 'config.php';
 
 $controller = new Controller_Categoria();
-$controller->cadastrarAcao();
+$controller->cadastrarAcao(); 

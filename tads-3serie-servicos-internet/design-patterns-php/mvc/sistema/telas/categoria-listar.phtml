@@ -17,11 +17,13 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach ($this->getValor('categorias') as $cat) {?>
                 <tr>
-                    <td>{{idcategoria}}</td>
-                    <td>{{categoria}}</td>
+                    <td><?php echo $cat->idcategoria; ?></td>
+                    <td><?php echo $cat->categoria; ?></td>
                     <td><a href="categoria-cadastrar.php">[Editar]</a></td>
                 </tr>
+                <?php } ?>
             </tbody>
         </table>
     </body>

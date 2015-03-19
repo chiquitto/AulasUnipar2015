@@ -27,5 +27,15 @@ extends Controller {
         
         $view->mostrar('categoria-cadastrar');
     }
+    public function listarCategoriaAcao() {
+        
+        $dao = new Dao_Categoria();
+        $retorno = $dao->request();
+        
+        $view = $this->getView();
+        
+        $view->setValor('categorias', $retorno);
+        $view->mostrar('categoria-listar');
+    }
     
 }
