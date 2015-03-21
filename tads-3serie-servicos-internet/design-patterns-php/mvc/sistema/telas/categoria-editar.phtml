@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Editar categoria</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Editar categoria</h1>
+        
+        <?php
+        $erro = $this->getValor('categoria');
+        if ($erro != '') {
+        ?>
+        <p>Mensagem de erro: <?php echo $erro; ?></p>
+        <?php
+        }
+        ?>
+        
+        <?php $categoria = $this->getValor('categoria'); ?>
+        <form action="categoria-editar.php" method="post">
+            Categoria:
+            <input type="text" value="<?php echo $categoria->categoria;?>" name="categoria">
+            <input type="hidden" name="idcategoria" value="<?php echo $categoria->idcategoria; ?>">
+            <br>
+            <input type="submit" value="Editar ">
+        </form>
+    </body>
+</html>
