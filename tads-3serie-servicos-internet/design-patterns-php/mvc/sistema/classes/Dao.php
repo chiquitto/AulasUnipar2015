@@ -43,7 +43,7 @@ abstract class Dao {
         } catch (Exception $exc) {
             // Gerar Log
             
-            throw new Exception('DAO: Erro para inserir o registro');
+            throw new Exception('DAO: Erro para inserir o registro. Erro:' . $exc->getMessage());
         }
     }
 

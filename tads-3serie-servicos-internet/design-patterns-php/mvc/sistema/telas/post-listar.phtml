@@ -2,26 +2,26 @@
 
 <html>
     <head>
-        <title>Listar categorias</title>
+        <title>Listar posts</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Categorias</h1>
+        <h1>Posts</h1>
         
         <table>
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Categoria</th>
+                    <th>Título</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($this->getValor('categorias') as $cat) {?>
+                <?php foreach ($this->getValor('posts') as $post) {?>
                 <tr>
-                    <td><?php echo $cat->idcategoria; ?></td>
-                    <td><?php echo $cat->categoria; ?></td>
-                    <td><a href="categoria-editar.php?idcategoria=<?php echo $cat->idcategoria; ?>">[Editar]</a></td>
+                    <td><?php echo $post->idpost; ?></td>
+                    <td><?php echo $post->titulo; ?></td>
+                    <td><a href="post-editar.php?idpost=<?php echo $cat->idpost; ?>">[Editar]</a></td>
                 </tr>
                 <?php } ?>
             </tbody>

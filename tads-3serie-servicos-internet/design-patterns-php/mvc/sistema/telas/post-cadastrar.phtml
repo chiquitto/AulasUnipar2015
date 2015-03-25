@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Cadastrar post</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Cadastrar post</h1>
+        
+        <?php
+        $erro = $this->getValor('erro');
+        if ($erro != '') {
+        ?>
+        <p>Mensagem de erro: <?php echo $erro; ?></p>
+        <?php
+        }
+        ?>
+        
+        <form action="post-cadastrar.php" method="post">
+            Título:
+            <input type="text" name="titulo">
+            <br>
+            Texto:
+            <textarea name="texto" rows="5"></textarea>
+            <br>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </body>
+</html>
