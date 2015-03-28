@@ -1,0 +1,7 @@
+Criar 3 páginas HTML de assuntos diversos. Ex.: carros, jogos e mitologia.
+
+Cada página tem que ter:
+  . links para as outras 2 páginas;
+  . titulo referente a página;
+  . texto e figuras referente ao assunto da página;
+
