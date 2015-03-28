@@ -47,23 +47,51 @@ extends Controller {
     
     
     public function editarAcao(){
-        $idpost = (int) $_GET['idpost'];
-        $dao = new Dao_Post();
+        $view = $this->getView();
         
-        $retorno = $dao->request("idpost = $idpost");
-        if(!isset($retorno[0])){
-            echo 'Nenhum Post encontrado';
-            exit;
+        if($_POST){
+            $idpost = (int) $_POST['idpost'];
+            $idcategoria = (int) $_POST['idcategoria'];
+            $titulo = $_POST['titulo'];
+            $texto = $_POST['texto'];
+            
+            $voPost = new Vo_Post();
+               
+            $voPost->idpost = $idpost;
+            $voPost->idcategoria = $idcategoria; //by conz
+            $voPost->titulo = $titulo;
+            $voPost->texto = $texto;
+            
+            $postModel = new Model_Post();
+            try{
+                $postModel->editar($voPost);
+                header("location:post-editar.php?idpost=$idpost"); 
+                exit;
+            } catch (Exception_Post_TextoVazio $exTexto) {
+                $view->setValor('erro', "Preencha o campo texto!");
+            } catch (Exception_Post_TituloVazio $exTitulo){
+                $view->setValor('erro', "Preencha o campo título!");
+            }
+
         }
-        $post = $retorno[0];
+        else {
+            $idpost = (int) $_GET['idpost'];
+            $dao = new Dao_Post();
+        
+            $retorno = $dao->request("idpost = $idpost");
+            if(!isset($retorno[0])){
+                echo 'Nenhum Post encontrado';
+                exit;
+            }
+            $voPost = $retorno[0];
+        }
         
         $daoCategoria = new Dao_Categoria();
         $listaCategoria = $daoCategoria->request();
         
-        $view = $this->getView();
         $view->setValor('categorias',$listaCategoria);
            
-        $view->setValor('post', $post);
+        $view->setValor('post', $voPost);
         $view->mostrar('post-editar');
     }
 }
