@@ -1,0 +1,56 @@
+Webservice
+
+Web service é uma solução utilizada na integração de sistemas e na comunicação entre aplicações diferentes. Com esta tecnologia é possível que novas aplicações possam interagir com aquelas que já existem e que sistemas desenvolvidos em plataformas diferentes sejam compatíveis. Os Web services são componentes que permitem às aplicações enviar e receber dados em formato XML. Cada aplicação pode ter a sua própria "linguagem", que é traduzida para uma linguagem universal, um formato intermediário como XML, Json, CSV, etc. (Wikipedia)
+
+====
+
+API
+
+API, de Application Programming Interface (ou Interface de Programação de Aplicativos) é um conjunto de rotinas e padrões estabelecidos por um software para a utilização das suas funcionalidades por aplicativos que não pretendem envolver-se em detalhes da implementação do software, mas apenas usar seus serviços.
+
+De modo geral, a API é composta por uma série de funções acessíveis somente por programação, e que permitem utilizar características do software menos evidentes ao utilizador tradicional.
+
+É considerado sinônimo de Web Service.
+
+http://www.tecmundo.com.br/programacao/1807-o-que-e-api-.htm#ixzz2Ol1zcuRU
+
+Pra que usar APIs?
+
+. Redução de complexidade do sistema
+. Redução da carga do processamento
+. Compartilhamento de conteúdo
+. Compartilhamento de conhecimento
+
+====
+
+Exemplos de API
+https://dev.twitter.com/docs/api
+
+https://developers.google.com/apis-explorer/#p/
+https://developers.google.com/+/api/
+https://developers.google.com/maps/
+https://developers.google.com/youtube/
+https://developers.google.com/+/hangouts/api/
+
+https://developers.facebook.com/docs/graph-api
+http://instagram.com/developer/
+https://www.dropbox.com/developers
+https://developer.paypal.com/
+https://pagseguro.uol.com.br/v2/guia-de-integracao/api-de-pagamentos.html#!rmcl
+http://developer.buscape.com.br/pt/product/buscape/manual-api.html
+
+https://www.iconfinder.com/about/api
+
+Diretorio de APIS
+http://www.programmableweb.com/apis/directory
+
+====
+
+Essencialmente, precisamos conhecer:
+. Transporte de dados (Protocolo HTTP);
+. Linguagens para transporte de dados (XML,JSON,CSV)
+
+Geração/Leitura das linguagens para transporte de dados (usando a linguagem PHP)
+
+====
+

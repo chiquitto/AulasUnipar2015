@@ -1,0 +1,7 @@
+Retorna a representação JSON de um valor
+http://php.net/manual/pt_BR/function.json-encode.php
+string json_encode ( mixed $value [, int $options = 0 [, int $depth = 512 ]] )
+
+Decodifica uma string JSON
+http://php.net/manual/pt_BR/function.json-decode.php
+mixed json_decode ( string $json [, bool $assoc ] )
