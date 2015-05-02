@@ -1,88 +1,105 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Formularios</title>
+  <title>Formulario 1</title>
   <meta charset="utf-8">
 </head>
-
 <body>
 
-  <form name="form1" action="form1.html">
+	<form name="form1" action="">
 
-  	<input name="datahoje" value="30/04" type="hidden">
+		<input type="hidden" name="escondido" value="1">
 
-    <fieldset>
-      <legend>Dados pessoais</legend>
+		<p>
+      Nome completo:
+      <input type="text" name="nome" value="">
+		</p>
 
-    Nome: <input name="nome" value="" type="text" required pattern="[A-Z]{2}" placeholder="Nome completo">
+		<p>
+			Pesquisa:
+			<input type="search" name="pesq"
+			placeholder="Termo de pesquisa">
+		</p>
 
-    <br>
+		<p>
+			Telefone:
+			<input type="tel" name="fone">
+		</p>
 
-    Email: <input name="email" value="" type="email" required>
+		<p>
+			URL:
+			<input type="url" name="site" required>
+		</p>
 
-    <br>
+		<p>
+			Email:
+			<input type="email" name="email" required>
+		</p>
 
-    Senha: <input name="senha" value="" type="password" required>
+		<p>
+			Senha:
+			<input type="password" name="senha">
+		</p>
 
-    </fieldset>
+		<p>
+			Data/Hora:
+			<input type="datetime" name="datahora">
+		</p>
 
-    Dias no ano: <input name="dias" type="number" required min="0" max="360" step="30">
+		<p>
+			Data de nascimento:
+			<input type="date" name="nascimento">
+		</p>
 
-    <br>
+		<p>
+			Filhos:
+			<input type="number" name="filhos" required
+			min="0" max="10" step="2">
+		</p>
 
-  	Idade:
+		<p>
+			Volume:
+			<input type="range" name="vol" required
+			min="0" max="50" step="10"
+			value="50">
+		</p>
 
-  	  <input name="idade" value="1" type="radio" id="idade1">
-  	  <label for="idade1">1 a 5 anos</label>
+		<p>
+			Cor:
+			<input type="color" name="cor">
+		</p>
 
-  	  <input name="idade" value="2" type="radio">
-  	  5 a 18 anos
+		<p>
+			<input type="checkbox" name="carne"
+			value="sim" checked>
+			Gosta de carne
 
-  	  <input name="idade" value="3" type="radio" checked>
-  	  Maior de 18 anos
+			<input type="checkbox" name="salada" checked>
+			Gosta de salada
+		</p>
 
-  	<br>
+		<p>
+			Série:
 
-  	Sua foto:
-  	<input name="foto" type="file">
+			<input type="radio" name="serie" value="1" checked>
+			1ª série
 
-  	<br>
+			<input type="radio" name="serie" value="2">
+			2ª série
 
-    Esfiha:
-    <select name="esfiha" multiple>
-      <option value="">Escolha uma opção</option>
-      <optgroup label="Carnes">
-        <option value="1">Carne</option>
-        <option value="3" selected>Bacon</option>
-      </optgroup>
-      <optgroup label="Queijos">
-        <option value="2">Queijo</option>
-        <option value="4">Parmesão</option>
-      </optgroup>
-    </select>
+			<input type="radio" name="serie" value="3">
+			3ª série
+		</p>
 
-    <br>
+		<p>
+			Arquivo:
+			<input type="file" name="foto">
+		</p>
 
-    Esfiha:
-    <input name="esfiha2" type="text" list="sabor">
-    <datalist id="sabor">
-      <option value="Carne">
-      <option value="Frango">
-      <option value="Pizza">
-    </datalist>
+		<input type="submit" name="botao" value="Salvar">
 
-    <br>
-
-    <textarea name="mensagem">Valor padrão
-Valor padrão 2</textarea>
-
-    <br>
-
-  	<input name="botao" value="Salvar" type="submit">
-
-  </form>
+	</form>
 
 </body>
-
 </html>
+

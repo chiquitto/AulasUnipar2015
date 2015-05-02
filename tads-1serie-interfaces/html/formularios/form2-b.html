@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario 2</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+	<form name="form2" action="">
+
+		<p>
+			Marca de celular
+			<select name="celular">
+				<option value="">Selecione ...</option>
+				<option value="SAM">Samsung</option>
+				<option value="MOT">Motorola</option>
+			</select>
+		</p>
+
+		<p>
+			Sabor de sorvete
+			<select name="sabor" multiple>
+				<option value="CHO">Chocolate</option>
+				<option value="MOR">Morango</option>
+				<option value="FLO">Flocos</option>
+				<option value="LIM">Limao</option>
+			</select>
+		</p>
+
+		<p>
+			Nome do seu filho
+			<input type="text" name="nome"
+			list="sugestoes" required
+			placeholder="Escolha um nome"
+			>
+
+			<datalist id="sugestoes">
+				<option value="Waldisnei">
+				<option value="Safira">
+			</datalist>
+		</p>
+
+		<p>
+			Mensagem
+			<textarea name="mensagem"></textarea>
+		</p>
+
+		<p>
+			Teste Disabled
+			<input type="text" name="teste"
+			value="Universidade Paranaense" disabled>
+		</p>
+
+		<p>
+			Somente leitura
+			<input type="text" name="salario"
+			value="R$ 50.00" readonly>
+		</p>
+
+		<input type="submit" value="Salvar/Cadastrar">
+
+	</form>
+
+</body>
+</html>
+

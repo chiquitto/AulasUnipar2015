@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario 2</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+	<form name="form2" action="">
+
+		<p>
+			Naturalidade:
+			<select name="nascimento">
+				<option value="0">Selecione uma cidade</option>
+				<option value="cia" selected>Cianorte</option>
+				<option value="mar">Maringa</option>
+				<option value="lon">Londrina</option>
+			</select>
+		</p>
+
+		<p>
+			Cidade onde morou:
+			<select name="morou"
+			multiple required>
+				<option value="cia" selected>Cianorte</option>
+				<option value="mar" selected>Maringa</option>
+				<option value="lon">Londrina</option>
+			</select>
+		</p>
+
+		<p>
+			Cidade que deseja morar:
+			<input type="text" name="cidade" list="deseja"
+			required placeholder="Qual a sua proxima cidade?"
+			>
+			<datalist id="deseja">
+				<option value="Nova York">
+				<option value="Paris">
+				<option value="Lima">
+			</datalist>
+		</p>
+
+		<p>
+			Descreva a cidade:
+			<textarea name="descricao" readonly>Descricao da cidade</textarea>
+		</p>
+
+		<input type="submit" value="Enviar!">
+
+	</form>
+
+</body>
+</html>
+
