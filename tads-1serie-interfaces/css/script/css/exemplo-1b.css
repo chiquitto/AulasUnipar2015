@@ -1,0 +1,30 @@
+* {
+	color: white;
+}
+
+h1 {
+	color: red;
+}
+
+h2 {
+	color: green;
+}
+
+input {
+	color: red;
+}
+
+.tit1 {
+	color: blue;
+}
+
+#h2verde {
+	color: green;
+}
+
+#td1 {
+	color: red;
+}
+#td5 {
+	color: pink;
+}
