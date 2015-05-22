@@ -1,6 +1,7 @@
 <?php
 
 class Erros {
+
     const CATEGORIA_VAZIO = 1000;
     const CATEGORIA_INEXISTENTE = 1001;
     const CATEGORIA_EXISTENTE = 1002;
@@ -11,21 +12,23 @@ class Erros {
     const POST_INEXISTENTE = 2003;
     const POST_TITULO_VAZIO = 2004;
     const BD = 3000;
-    
-    
+
     private static $mensagens = array(
         0 => '',
         self::CATEGORIA_VAZIO => 'Informe uma categoria',
         self::CATEGORIA_INEXISTENTE => 'Codigo de categoria inexistente',
+        self::CATEGORIA_EXISTENTE => 'Nome de categoria já existe',
         self::CATEGORIA_COM_POST => 'Esta categoria possui relacao com registros de Post',
         self::POST_VAZIO => 'Informe um titulo para o post',
+        self::POST_TITULO_EXISTENTE => 'Titulo ja existe',
+        self::POST_TEXTO_INSUFICIENTE => 'A quantidade minima de caracteres para este texto e de 50 caracteres',
+        self::POST_INEXISTENTE => 'Post inexistente.',
+        self::POST_TITULO_VAZIO => 'Titulo do post não pode ser vazio',
         self::BD => 'Exceção no banco de dados',
-        self::POST_TITULO_EXISTENTE=> 'Titulo ja existe',
-        self::POST_TEXTO_INSUFICIENTE=> 'A quantidade minima de caracteres para este texto e de 50 caracteres',
-        self::POST_INEXISTENTE=> 'Post inexistente.'
     );
-    
+
     public static function getMensagem($erro) {
         return self::$mensagens[$erro];
     }
+
 }

@@ -1,6 +1,6 @@
 <?php
 
-define('PATH', '/home/alisson/Trabalho/AulasUnipar2015/tads-3serie-servicos-internet/webservices/api-blog');
+define('PATH', '/home/alisson/Trabalho/AulasUnipar2015/tads-3serie-servicos-internet/webservices/api-blog-cliente');
 
 define('TELAS', PATH . '/telas');
 define('CLASSES', PATH . '/classes');
@@ -26,14 +26,20 @@ function __autoload($className) {
     require CLASSES . "/" . $fileName;
 }
 
-function saidaJson(array $dados, $erro = 0) {
-    $r = array(
-        'erro' => $erro,
-        'erroMsg' => Erros::getMensagem($erro),
-        'dados' => $dados
+function httpPost(array $postdata, $uri) {
+    $postdata = http_build_query($postdata);
+
+    $opts = array('http' =>
+        array(
+            'method' => 'POST',
+            'header' => 'Content-type: application/x-www-form-urlencoded',
+            'content' => $postdata
+        )
     );
 
-    header('Content-Type: application/json');
-    echo json_encode($r);
-    exit;
+    $context = stream_context_create($opts);
+
+    $result = file_get_contents($uri, false, $context);
+    
+    return $result;
 }
