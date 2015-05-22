@@ -5,7 +5,7 @@ $idpost = (int) $_GET['idpost'];
 
 $con = Conexao::getInstance();
 
-$sql = " select idpost, idcategoria, titulo, texto 
+$sql = "Select idpost, idcategoria, titulo, texto 
        from post 
        where idpost = $idpost";
 
@@ -14,7 +14,7 @@ $post = $consulta->fetch(PDO::FETCH_ASSOC);
 
 if (!$post) {
     header('HTTP/1.0 404 Not Found');
-    exit();
+    saidaJson(array(), Erros::POST_INEXISTENTE);
 }
 
 $post['idpost'] = (int) $post['idpost'];

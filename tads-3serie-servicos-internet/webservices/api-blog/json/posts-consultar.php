@@ -13,12 +13,11 @@ if (isset($_GET['idcategoria'])) {
 
 $consulta = $con->query($sql);
 
-$post = array();
+$posts = array();
 while($linha = $consulta->fetch(PDO::FETCH_ASSOC)){
     $linha['idpost']= (int) $linha['idpost'];
     $linha['idcategoria'] = (int) $linha['idcategoria'];
-    $post[]= $linha;
+    $posts[]= $linha;
 }
 
-header('Content-Type: application/json');
-echo json_encode($post);
+saidaJson($posts);

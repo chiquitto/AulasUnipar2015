@@ -1,7 +1,7 @@
 <?php
 
 # define('PATH', 'D:\chiquitto\3serie\script');
-define('PATH', '/media/9996-2813/data/AulasUnipar2015/tads-3serie-servicos-internet/webservices/script');
+define('PATH', '/home/alisson/Trabalho/AulasUnipar2015/tads-3serie-servicos-internet/webservices/script');
 
 define('TELAS', PATH . '/telas');
 define('CLASSES', PATH . '/classes');

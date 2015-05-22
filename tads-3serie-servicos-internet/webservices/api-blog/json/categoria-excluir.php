@@ -25,5 +25,4 @@ try {
     saidaJson(array(), Erros::BD);
 }
 
-
 saidaJson(array());
