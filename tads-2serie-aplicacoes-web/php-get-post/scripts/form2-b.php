@@ -11,8 +11,16 @@
 	<?php //print_r($_POST); ?>
 
 	<p>Email: <?php echo $_POST['email']; ?></p>
-	
-	<p>Senha: <?php echo $_POST['senha']; ?></p>
+
+	<?php
+	if ($_POST['senha'] != '') {
+		$senha = $_POST['senha'];
+	}
+	else {
+		$senha = 'Vazio';
+	}
+	?>
+	<p>Senha: <?php echo $senha; ?></p>
 
 	<?php
 	if ( isset($_POST['logado']) ) {
@@ -22,7 +30,8 @@
 		$logado = 'Não';
 	}
 	?>
-	<p>Permanecer logado: <?php echo $logado; ?></p>
+	<p>Permanecer logado: <?php echo $logado; ?>
+	</p>
 
 </body>
 </html>
