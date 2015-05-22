@@ -10,7 +10,7 @@ class Erros {
     const POST_TEXTO_INSUFICIENTE = 2002;
     const POST_INEXISTENTE = 2003;
     const POST_TITULO_VAZIO = 2004;
-    const BD_ERRO = 3000;
+    const BD = 3000;
     
     
     private static $mensagens = array(
@@ -20,7 +20,9 @@ class Erros {
         self::CATEGORIA_COM_POST => 'Esta categoria possui relacao com registros de Post',
         self::POST_VAZIO => 'Informe um titulo para o post',
         self::BD => 'Exceção no banco de dados',
-        self::POST_TITULO_EXISTENTE=> 'Titulo ja existe'
+        self::POST_TITULO_EXISTENTE=> 'Titulo ja existe',
+        self::POST_TEXTO_INSUFICIENTE=> 'A quantidade minima de caracteres para este texto e de 50 caracteres',
+        self::POST_INEXISTENTE=> 'Post inexistente.'
     );
     
     public static function getMensagem($erro) {

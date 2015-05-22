@@ -2,7 +2,7 @@
 
 require '../config.php';
 
-$idcategoria = (int) $_POST['idcategoria'];
+$idcategoria = (int) $_GET['idcategoria'];
 
 $con = Conexao::getInstance();
 

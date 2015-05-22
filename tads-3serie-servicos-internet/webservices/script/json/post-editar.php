@@ -25,5 +25,14 @@ if ($tituloexiste){
     saidaJson(array('idpost'=>$tituloexiste['idpost']),  Erros::POST_TITULO_EXISTENTE);
 }
 
+$contarPost = strlen($texto);
+if($contarPost<50) {
+    saidaJson(array(), Erros::POST_TEXTO_INSUFICIENTE);
+}
 
+$sql = "update post set texto = '$texto',idcategoria = $idCategoria, titulo = '$titulo'
+where idpost = $idpost";
 
+$con->exec($sql);
+
+saidaJson(array());

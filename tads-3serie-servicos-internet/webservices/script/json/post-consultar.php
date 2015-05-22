@@ -20,5 +20,4 @@ if (!$post) {
 $post['idpost'] = (int) $post['idpost'];
 $post['idcategoria'] = (int) $post['idcategoria'];
 
-header('Content-Type: application/json');
-echo json_encode($post);
+saidaJson($post);
