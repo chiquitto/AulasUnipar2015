@@ -9,7 +9,7 @@ class Conexao extends PDO {
 
     private $dsn = 'mysql:host=localhost;dbname=blog';
     private $user = 'root';
-    private $password = '123456';
+    private $password = '';
     private static $instancia;
 
     public function __construct() {

@@ -27,7 +27,7 @@
      
  $contarTexto = strlen($texto);
  if($contarTexto <50){
-     saidaJson(array(),  Erros::POST_TEXTO_MENOR) ;
+     saidaJson(array(),  Erros::POST_TEXTO_INSUFICIENTE) ;
  }
  
  $sql = "insert into post(idcategoria,titulo,texto) values($idcategoria,'$titulo','$texto')";
