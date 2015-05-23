@@ -1,0 +1,31 @@
+p {
+	color: #0000ff;
+	color: #00F;
+	
+	color: rgb(0, 0, 255);
+	color: rgba(0, 0, 255, 0.25);
+	
+	color: hsl(240, 100%, 50%);
+	color: hsla(0, 100%, 50%, 0.5);
+	
+	color: #FF0000;
+}
+
+strong {
+	letter-spacing: 5px;
+	vertical-align: -5px;
+}
+
+p {
+	font-size: 12px;
+	line-height: 1.1em;
+	text-align: justify;
+	text-decoration: underline;
+	text-indent: 3em;
+	text-transform: capitalize;
+	word-spacing: 15px;
+}
+
+
+
+
