@@ -1,0 +1,4 @@
+http://api.wikia.com/wiki/LyricWiki_API
+
+Mostrar a lista de albuns de um artista.
+Para cada album, exibir as músicas do album.
