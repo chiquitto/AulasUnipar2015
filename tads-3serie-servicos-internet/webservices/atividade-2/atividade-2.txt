@@ -1,0 +1,8 @@
+1. Com o auxílio da API
+http://qrng.anu.edu.au/API/api-demo.php
+gerar 10 números aleatórios de até 16 bits
+
+2. Dos números gerados: Exibir o máximo, o mínimo e a média aritmetica.
+
+3. Exibir os números em ordem crescente.
+
