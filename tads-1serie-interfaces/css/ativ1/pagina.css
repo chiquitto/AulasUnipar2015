@@ -1,2 +1,31 @@
-/* * { color: #0000FF; } */
+/* * { color: #00FF00; } */
 
+h1{
+	color: #005500;
+}
+
+*{
+	font-family: arial, verdana, sans-serif;
+}
+
+p{
+	font-size: 110%;
+}
+
+strong{
+	font-size: 110%;
+	color: red;
+}
+
+#james{
+	text-decoration: underline;
+}
+
+.gamba{
+	background: #000000;
+	color: #FFFFFF; 
+}
+
+#ano{
+	color: #0000FF;
+}
