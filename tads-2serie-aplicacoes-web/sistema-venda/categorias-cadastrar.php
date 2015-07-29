@@ -5,6 +5,27 @@ require './lib/funcoes.php';
 require './lib/conexao.php';
 
 $msg = array();
+
+$categoria = '';
+
+if ($_POST) {
+  $categoria = $_POST['categoria'];
+
+  $sql = "Insert Into categoria
+  (categoria, situacao) Values
+  ('$categoria', '" . CATEGORIA_ATIVO . "')";
+
+  $r = mysqli_query($con, $sql);
+
+  if (!$r) {
+    $msg[] = 'Erro para salvar';
+    $msg[] = mysqli_error($con);
+  }
+  else {
+    javascriptAlertFim('Registro salvo', 'categorias.php');
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,7 +63,8 @@ $msg = array();
             <div class="col-xs-12">
               <div class="form-group">
                 <label for="fcategoria">Categoria</label>
-                <input type="text" class="form-control" id="fcategoria" name="categoria" placeholder="Nome da categoria">
+                <input type="text" class="form-control" id="fcategoria" name="categoria" placeholder="Nome da categoria"
+                value="<?php echo $categoria; ?>">
               </div>
             </div>
           </div>
