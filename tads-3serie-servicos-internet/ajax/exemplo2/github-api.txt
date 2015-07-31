@@ -1,0 +1,21 @@
+URL: https://api.github.com
+
+Pesquisa de usuários:
+https://developer.github.com/v3/search/#search-users
+GET /search/users
+Exemplo: https://api.github.com/search/users?q=chiqui
+
+Detalhes do usuario:
+https://developer.github.com/v3/users/#get-a-single-user
+GET /users/:username
+Exemplo: https://api.github.com/users/chiquitto
+
+Listar repositorios:
+https://developer.github.com/v3/repos/#list-user-repositories
+GET /users/:username/repos
+Exemplo: https://api.github.com/users/chiquitto/repos
+
+Detalhes de um repositorio:
+https://developer.github.com/v3/repos/#get
+GET /repos/:owner/:repo
+Exemplo: https://api.github.com/repos/chiquitto/AulasUnipar2015
