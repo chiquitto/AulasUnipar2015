@@ -1,0 +1,31 @@
+body { margin: 0; }
+
+h1 {
+	background: red;
+
+	margin-top: 10%;
+	margin-bottom: 15px;
+	margin-left: 10%;
+	margin-right: 10%;
+
+	/* top right bottom left */
+	margin: 10% 10% 15px 10%;
+
+	/* top/bottom right/left */
+	margin: 10% 20%;
+
+	/* tudo */
+	margin: 10%;
+
+	padding-top: 20px;
+	padding-bottom: 5%;
+	padding-left: 50px;
+
+	padding: 0;
+}
+
+h2 {
+	margin-top: 30px;
+
+	border: 5px solid #00FF00;
+}
