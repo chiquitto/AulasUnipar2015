@@ -23,4 +23,5 @@ $produtos[] = array(
 	'preco' => 6.70
 );
 
+sleep(3);
 echo json_encode($produtos);
