@@ -5,6 +5,50 @@ require './lib/funcoes.php';
 require './lib/conexao.php';
 
 $msg = array();
+  
+$nome ='';
+$email ='';
+
+if($_POST){
+
+  $nome = $_POST['usuario'];
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
+  $senha2 = $_POST['senha2'];
+
+  if(strlen($nome) < 12){
+    $msg[] = 'Informe um nome completo';
+  }
+  if($email == ''){
+    $msg[] = 'Informe o email';
+  }
+  
+  $sql = "SELECT COUNT(email) contador FROM usuario WHERE email = '$email' ";
+  $r = mysqli_query($con, $sql);
+  $m = mysqli_fetch_assoc($r);
+
+  if($m['contador'] >= 1){
+    $msg[] = 'Este email ja existe';
+  }
+  if($senha <> $senha2){
+    $msg[] = 'Senhas precisam ser iguais';
+  }
+  if(strlen($senha) < 6){
+    $msg[] = 'senha deve ter no minimo 6 caracteres';
+  }
+
+  if(!$msg){
+    $sql = "INSERT INTO usuario(nome, email, senha, situacao) VALUES ('$nome','$email', '$senha','". USUARIO_ATIVO . "')";
+    $r = mysqli_query($con, $sql);
+    if(!$r){
+      $msg[] = 'Falha no Cadastro';
+      $msg[] = mysqli_error($con);
+    }
+    else{
+      javascriptAlertFim('Registro salvo', 'usuarios.php');
+    }
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,8 +85,8 @@ $msg = array();
           <div class="row">
             <div class="col-xs-12">
               <div class="form-group">
-                <label for="fusuario">Usuário</label>
-                <input type="text" class="form-control" id="fusuario" name="usuario" placeholder="Nome completo">
+                <label for="fusuario">Nome</label>
+                <input type="text" class="form-control" id="fusuario" name="usuario" placeholder="Nome completo" value="<?php echo $nome ?>">
               </div>
             </div>
           </div>
@@ -50,7 +94,7 @@ $msg = array();
             <div class="col-xs-12">
               <div class="form-group">
                 <label for="femail">Email</label>
-                <input type="email" class="form-control" id="femail" name="email">
+                <input type="email" class="form-control" id="femail" name="email" value="<?php echo $email ?>">
               </div>
             </div>
           </div>
