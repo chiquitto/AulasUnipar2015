@@ -52,5 +52,58 @@ function frm1SubmitOk(dados) {
     }
     
     $('#frm2 .panel-body').html(html);
+    botaoRepositorios();
     $('#frm2').show();
+}
+
+function botaoRepositorios() {
+    $('.verRepositorios').click(verRepositoriosClick);
+
+}
+
+function verRepositoriosClick(e){
+    e.preventDefault();
+
+    var user = $(this).data('user');
+
+    var url = 'https://api.github.com/users/'
+               + user 
+               + '/repos';
+
+    $.ajax({
+        url:url,
+        success: verRepositoriosOK,
+        dataType: 'json',
+        type: 'GET',
+        data: {}
+    });
+
+}
+
+function verRepositoriosOK(dados){
+    //id, name, html_url, description
+
+    var i;
+    var modelo = '<tr>'
+                +'<td>{id}</td>'
+                +'<td>{nome}</td>'
+                +'<td>{descricao}</td>'
+                +'<td><a target="_blank" class="btn btn-xs btn-primary" href="{url}"><span class="glyphicon glyphicon-search"></span></a></td>'
+                +'<tr>';
+
+    var html = '';
+
+    for(i=0; i<dados.length; i++){
+        var repositorio = dados[i];
+        html += modelo
+
+            .replace('{id}', repositorio.id)
+            .replace('{nome}', repositorio.name)
+            .replace('{descricao}', repositorio.description)
+            .replace('{url}', repositorio.html_url);
+
+    }
+
+    $('#frm3 tbody').html(html);
+    $('#frm3').show();
 }
