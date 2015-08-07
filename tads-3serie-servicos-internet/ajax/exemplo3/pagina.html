@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Ajax</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="css/pagina.css">
+  </head>
+
+  <body>
+
+  	<div id="tudo">
+
+  		<h1>Meteorologia</h1>
+
+  		<p>Para visualizar o tempo para agora de uma cidade, digite a cidade no campo de pesquisa e clique em pesquisar.</p>
+
+			<form>
+				<fieldset>
+					<legend>Pesquisa de cidades</legend>
+
+					<input type="text" name="cidade">
+					<input type="submit" value="Pesquisar">
+				</fieldset>
+			</form>
+
+			<div>
+				<p>Meteorologia para agora</p>
+
+				<p>Cidade: <strong>{cidade}</strong></p>
+				<p>Temperatura: <strong>{temperatura}</strong></p>
+				<p>Céu no momento: <strong>{ceu}</strong></p>
+				<p>Humidade: <strong>{humidade}</strong></p>
+				<p>Vento: <strong>{vento}</strong></p>
+			</div>
+
+		</div>
+    
+  </body>
+</html>

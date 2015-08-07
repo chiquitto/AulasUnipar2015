@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Ajax</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="css/pagina.css">
+  </head>
+
+  <body>
+
+  	<div id="tudo">
+
+  		<h1>Pesquisa por CEP</h1>
+
+  		<p>Informe o CEP no campo de pesquisa e clique em Pesquisar, então nossos sistemas irá te informar a localização aproximada.</p>
+
+			<form>
+				<fieldset>
+					<legend>Pesquisa de cep</legend>
+
+					<input type="text" name="cep">
+					<input type="submit" value="Pesquisar">
+				</fieldset>
+			</form>
+
+			<div>
+				<p>Endereço</p>
+
+				<p>Cidade: <strong>{cidade}/{uf}</strong></p>
+				<p>Logradouro: <strong>{logradouro}</strong></p>
+				<p>Bairro: <strong>{bairro}</strong></p>
+				<p>CEP: <strong>{cep}</strong></p>
+			</div>
+
+		</div>
+    
+  </body>
+</html>

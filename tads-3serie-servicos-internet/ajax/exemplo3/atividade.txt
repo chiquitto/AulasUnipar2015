@@ -1,0 +1,4 @@
+http://www.previsaodotempo.org/api.php?city=Cianorte
+
+Exemplo de resultado:
+{"apiVersion":"1.0", "data":{ "location":"Cianorte", "temperature":"21", "skytext":"Sky is Clear", "humidity":"46", "wind":"18.36 km/h", "date":"08-07-2015", "day":"Sexta" } }
