@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#tudo {
+	margin: 20px auto 0 auto;
+	width: 600px;
+}
+
+.btn {
+	background-color: #FFFFFF;
+
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(140,140,140);
+	border-radius: 4px;
+
+	padding: 6px 12px 6px 12px;
+
+	font-family: Helvetica;
+	font-size: 14px;
+	line-height: 1.42em;
+	color: rgb(51,51,51);
+
+	cursor: pointer;
+}
+
+.btn-default {}
+
+.btn-default:hover {
+	background: rgb(230,230,230);
+}
+
+.btn-primary {
+	background-color: #337ab7;
+	color: #FFFFFF;
+	border-color: #2e6da4;
+}
+
+.btn-primary:hover {
+	background-color: #286090;
+	border-color: #204d74;
+}
+
+.btn-link {
+	border: none;
+	color: rgb(51, 122, 183);
+}
+
+.btn-link:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
