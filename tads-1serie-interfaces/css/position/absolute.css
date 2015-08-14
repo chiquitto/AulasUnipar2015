@@ -1,0 +1,30 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#tudo {
+	background-color: red;
+	margin: 100px auto 100px auto;
+	height: 1800px;
+	width: 600px;
+}
+
+#div1 {
+	background-color: blue;
+	height: 400px;
+	width: 400px;
+}
+
+#div2 {
+	background-color: green;
+	height: 300px;
+	width: 300px;
+}
+
+#div3 {
+	background-color: #FF00FF;
+	height: 200px;
+	width: 200px;
+}
