@@ -77,5 +77,40 @@ $app->post('/estado', function () {
     )));
 });
 
+$app->get('/cidade', function() use ($app) {
+    $con = Conexao::getInstance();
+
+    $sql = "SELECT idcidade, cidade, populacao, iduf FROM cidade";
+    $cidades = $con->query($sql);
+
+    $cidadesArray = $cidades->fetchAll(PDO::FETCH_ASSOC);
+
+    $app->response->setStatus(200);
+    $app->response->headers->set('content-type', 'application/json');
+    $app->response->write(saidaJson($cidadesArray));
+});
+
+$app->get('/cidade/:idcidade', function($idcidade) use ($app) {
+    $idcidade = (int) $idcidade;
+
+    $sql = "Select idcidade, cidade, populacao, iduf
+    From cidade
+    Where (idcidade = $idcidade)";
+
+    $con = Conexao::getInstance();
+    $consulta = $con->query($sql);
+
+    $cidade = $consulta->fetch(PDO::FETCH_ASSOC);
+
+    $app->response->headers->set('content-type', 'application/json');
+    if (!$cidade) {
+        $app->response->setStatus(404);
+    }
+    else {
+        $app->response->setStatus(200);
+        $app->response->write(saidaJson($cidade));
+    }
+});
+
 $app->run();
 sleep(1);
