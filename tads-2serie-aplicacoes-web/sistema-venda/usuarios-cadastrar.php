@@ -34,7 +34,7 @@ if($_POST){
     $msg[] = 'Senhas precisam ser iguais';
   }
   if(strlen($senha) < 6){
-    $msg[] = 'senha deve ter no minimo 6 caracteres';
+    $msg[] = 'Senha deve ter no minimo 6 caracteres';
   }
 
   if(!$msg){
