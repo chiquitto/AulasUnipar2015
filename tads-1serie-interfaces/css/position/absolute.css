@@ -9,18 +9,28 @@
 	margin: 100px auto 100px auto;
 	height: 1800px;
 	width: 600px;
+
+	position: relative;
 }
 
 #div1 {
 	background-color: blue;
 	height: 400px;
 	width: 400px;
+
+	position: absolute;
+	bottom: 0;
 }
 
 #div2 {
 	background-color: green;
 	height: 300px;
 	width: 300px;
+
+	position: absolute;
+	
+	bottom: 0;
+	right: 0;
 }
 
 #div3 {

@@ -21,6 +21,10 @@
 	background-color: green;
 	height: 300px;
 	width: 300px;
+
+	position: fixed;
+	right: 0;
+	bottom: 0;
 }
 
 #div3 {
