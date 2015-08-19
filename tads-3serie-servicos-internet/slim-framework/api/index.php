@@ -70,7 +70,7 @@ $app->post('/estado', function () {
     $statement->execute();
 
     // $iduf = $con->lastInsertId();
-    
+
     $app->response->headers->set('Content-Type', 'application/json');
     $app->response->write(saidaJson(array(
         'iduf' => $iduf,
@@ -110,6 +110,45 @@ $app->get('/cidade/:idcidade', function($idcidade) use ($app) {
         $app->response->setStatus(200);
         $app->response->write(saidaJson($cidade));
     }
+});
+
+$app->get('/estado/cidade/:uf', function($uf) use ($app){
+    $uf = strtoupper($uf);
+    $con = Conexao::getInstance();
+    $sql = "select idcidade, cidade, populacao from cidade where iduf = :uf";
+    $prepare = $con->prepare($sql);
+    $prepare->bindValue(':uf', $uf, PDO::PARAM_STR);
+    $prepare->execute();
+    $consulta = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+    $app->response->setStatus(200);
+    $app->response->headers->set('Content-Type',
+    'application/json');
+    $app->response->write(saidaJson($consulta));
+});
+
+$app->post('/cidade', function() use ($app) {
+    $cidade = $app->request->params('cidade');
+    $populacao = $app->request->params('populacao');
+    $uf = $app->request->params('uf');
+    $uf = strtoupper($uf);
+    $populacao = (int) $populacao;
+
+    $con = Conexao::getInstance();
+    $sql = "Insert into cidade (cidade, populacao, iduf) values (:cidade,:populacao,:iduf)";
+    $prepara = $con->prepare($sql);
+    $prepara->bindValue(':cidade',$cidade);
+    $prepara->bindValue(':populacao',$populacao);
+    $prepara->bindValue(':iduf',$uf);
+    $prepara->execute();
+
+    $cod = $con->lastInsertId();
+    $app->response->setStatus(200);
+    $app->response->headers->set('Content-Type',
+    'application/json');
+    $app->response->write(saidaJson(
+      array('idcidade'=>$cod)
+    ));
 });
 
 $app->run();
