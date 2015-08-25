@@ -34,10 +34,16 @@ require './lib/funcoes.php';
               <h3 class="panel-title">Usuários</h3>
             </div>
 
+            <?php
+            $q = '';
+            if (isset($_GET['q'])) {
+              $q = trim($_GET['q']);
+            }
+            ?>
             <form class="panel-body form-inline" role="form" method="get" action="">
               <div class="form-group">
                 <label class="sr-only" for="fq">Pesquisa</label>
-                <input type="search" class="form-control" id="fq" name="q" placeholder="Pesquisa">
+                <input type="search" class="form-control" id="fq" name="q" placeholder="Pesquisa" value="<?php echo $q; ?>">
               </div>
               <button type="submit" class="btn btn-default">Pesquisar</button>
             </form>
@@ -52,18 +58,33 @@ require './lib/funcoes.php';
                 </tr>
               </thead>
               <tbody>
+                <?php
+                $sql = "Select idusuario, nome, email, situacao From usuario";
+
+                if ($q != '') {
+                  $sql .= " Where ((nome like '%$q%') Or (email like '%$q%'))";
+                }
+                
+                $consulta = mysqli_query($con, $sql);
+
+                 while($linha = mysqli_fetch_assoc($consulta)) {
+                ?>
                 <tr>
-                  <td>{idusuario}</td>
+                  <td><?php echo $linha['idusuario']; ?></td>
                   <td>
+                    <?php if ($linha['situacao'] == CATEGORIA_ATIVO) { ?>
                     <span class="label label-success">ativo</span>
+                    <?php } else { ?>
                     <span class="label label-warning">inativo</span>
+                    <?php } ?>
                   </td>
-                  <td>{usuario}</td>
+                  <td><?php echo $linha['nome']; ?>&lt;<?php echo $linha['email']; ?>&gt;</td>
                   <td>
-                    <a href="usuarios-editar.php?idusuario={idusuario}" title="Editar"><i class="fa fa-edit fa-lg"></i></a>
-                    <a href="usuarios-senha.php?idusuario={idusuario}" title="Senha"><i class="fa fa-lock fa-lg"></i></a>
+                    <a href="usuarios-editar.php?idusuario=<?php echo $linha['idusuario']; ?>" title="Editar"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="usuarios-senha.php?idusuario=<?php echo $linha['idusuario']; ?>" title="Senha"><i class="fa fa-lock fa-lg"></i></a>
                   </td>
                 </tr>
+                <?php } ?>
               </tbody>
             </table>
           </div>

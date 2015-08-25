@@ -38,7 +38,11 @@ if($_POST){
   }
 
   if(!$msg){
-    $sql = "INSERT INTO usuario(nome, email, senha, situacao) VALUES ('$nome','$email', '$senha','". USUARIO_ATIVO . "')";
+    $sql = "INSERT INTO usuario
+    (nome, email, senha, situacao)
+    VALUES
+    ('$nome','$email', '$senha','". USUARIO_ATIVO . "')";
+
     $r = mysqli_query($con, $sql);
     if(!$r){
       $msg[] = 'Falha no Cadastro';

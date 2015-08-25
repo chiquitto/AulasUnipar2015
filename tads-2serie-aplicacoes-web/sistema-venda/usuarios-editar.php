@@ -13,7 +13,6 @@ else {
   $idusuario = (int) $_GET['idusuario'];
 }
 
-
 $sql = "select idusuario, nome, email, situacao from usuario where $idusuario = idusuario";
 $consulta = mysqli_query($con, $sql);
 $usuario = mysqli_fetch_assoc($consulta);
@@ -32,22 +31,39 @@ if ($_POST) {
     $situacao = USUARIO_INATIVO;
   }
 
-  // Validacoes aqui
-
-  $sql = "UPDATE usuario Set
-  	nome = '$nome',
-  	email = '$email',
-  	situacao = '$situacao'
-  Where (idusuario = $idusuario)";
-
-  $resultado = mysqli_query($con, $sql);
-
-  if (!$resultado) {
-    $msg[] = 'Falha ao salvar!';
-    $msg[] = mysqli_error($con);
+  if(strlen($nome) < 12){
+    $msg[] = 'Informe um nome completo';
   }
-  else {
-    javascriptAlertFim('Gravação efetuada!', 'usuarios.php');
+  if($email == ''){
+    $msg[] = 'Informe o email';
+  }
+  
+  $sql = "SELECT COUNT(email) contador
+  FROM usuario
+  WHERE (email = '$email') And (idusuario != $idusuario)";
+  $r = mysqli_query($con, $sql);
+  $m = mysqli_fetch_assoc($r);
+
+  if($m['contador'] >= 1){
+    $msg[] = 'Este email já esta em uso para outro usuário';
+  }
+
+  if (!$msg) {
+    $sql = "UPDATE usuario Set
+      nome = '$nome',
+      email = '$email',
+      situacao = '$situacao'
+    Where (idusuario = $idusuario)";
+
+    $resultado = mysqli_query($con, $sql);
+
+    if (!$resultado) {
+      $msg[] = 'Falha ao salvar!';
+      $msg[] = mysqli_error($con);
+    }
+    else {
+      javascriptAlertFim('Gravação efetuada!', 'usuarios.php');
+    }
   }
 
 }

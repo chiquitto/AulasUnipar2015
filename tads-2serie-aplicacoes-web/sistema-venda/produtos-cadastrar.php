@@ -5,6 +5,51 @@ require './lib/funcoes.php';
 require './lib/conexao.php';
 
 $msg = array();
+
+$idcategoria = 0;
+$produto = '';
+$precocompra = 0;
+$precovenda = 0;
+$saldo = 0;
+
+if ($_POST) {
+  $idcategoria = 1;
+  $produto = $_POST['produto'];
+  $precocompra = (float) $_POST['precocompra'];
+  $precovenda = (float) $_POST['precovenda'];
+  $saldo = (int) $_POST['saldo'];
+  $situacao = PRODUTO_ATIVO;
+
+  if ($produto == '') {
+    $msg[] = 'Informe o nome do produto';
+  }
+  if ($precocompra <= 0) {
+    $msg[] = 'Preço de compra deve ser maior que 0.0';
+  }
+  if ($precovenda < $precocompra) {
+    $msg[] = 'Preço de venda deve ser maior que preço de compra';
+  }
+  if ($saldo < 0) {
+    $msg[] = 'Saldo deve ser no mínimo zero';
+  }
+
+  if (!$msg) {
+    $sql = "INSERT INTO produto
+      (produto, precocompra, precovenda, situacao, idcategoria, saldo)
+      VALUES
+      ('$produto', $precocompra, $precovenda, '$situacao', $idcategoria, $saldo)";
+
+    $insert = mysqli_query($con, $sql);
+    if (!$insert) {
+      $msg[] = 'Falha para inserir o produto';
+      $msg[] = mysqli_error($con);
+      $msg[] = $sql;
+    }
+    else {
+      javascriptAlertFim('Produto cadastrado', 'produtos.php');
+    }
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,7 +97,7 @@ $msg = array();
             <div class="col-xs-6">
               <div class="form-group">
                 <label for="fproduto">Produto</label>
-                <input type="text" class="form-control" id="fproduto" name="produto" placeholder="Nome do produto">
+                <input type="text" class="form-control" id="fproduto" name="produto" placeholder="Nome do produto" value="<?php echo $produto; ?>">
               </div>
             </div>
           </div>
@@ -63,7 +108,7 @@ $msg = array();
                 <label for="fprecocompra">Preço de compra</label>
                 <div class="input-group">
                   <span class="input-group-addon">R$</span>
-                  <input type="text" class="form-control" id="fprecocompra" name="precocompra">
+                  <input type="text" class="form-control" id="fprecocompra" name="precocompra" value="<?php echo $precocompra; ?>">
                 </div>
               </div>
             </div>
@@ -73,7 +118,7 @@ $msg = array();
                 <label for="fprecovenda">Preço de venda</label>
                 <div class="input-group">
                   <span class="input-group-addon">R$</span>
-                  <input type="text" class="form-control" id="fprecovenda" name="precovenda">
+                  <input type="text" class="form-control" id="fprecovenda" name="precovenda" value="<?php echo $precovenda; ?>">
                 </div>
               </div>
             </div>
@@ -83,7 +128,7 @@ $msg = array();
             <div class="col-xs-6">
               <div class="form-group">
                 <label for="fsaldo">Saldo</label>
-                <input type="number" class="form-control" id="fsaldo" name="saldo">
+                <input type="number" class="form-control" id="fsaldo" name="saldo" value="<?php echo $saldo; ?>">
               </div>
             </div>
           </div>

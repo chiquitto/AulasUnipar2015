@@ -37,6 +37,11 @@ require './lib/funcoes.php';
             <form class="panel-body form-inline" role="form" method="get" action="">
               <div class="form-group">
                 <label class="sr-only" for="fq">Pesquisa</label>
+                <select class="form-control" id="fcategoria" name="categoria">
+                  <option value="">--</option>
+                  <option value="1">Categoria 1</option>
+                  <option value="2">Categoria 2</option>
+                </select>
                 <input type="search" class="form-control" id="fq" name="q" placeholder="Pesquisa">
               </div>
               <button type="submit" class="btn btn-default">Pesquisar</button>
