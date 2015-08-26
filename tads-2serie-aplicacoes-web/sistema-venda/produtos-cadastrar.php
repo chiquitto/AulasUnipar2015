@@ -13,12 +13,25 @@ $precovenda = 0;
 $saldo = 0;
 
 if ($_POST) {
-  $idcategoria = 1;
+  $idcategoria = (int) $_POST['categoria'];
   $produto = $_POST['produto'];
   $precocompra = (float) $_POST['precocompra'];
   $precovenda = (float) $_POST['precovenda'];
   $saldo = (int) $_POST['saldo'];
   $situacao = PRODUTO_ATIVO;
+
+  if ($idcategoria <= 0) {
+    $msg[] = 'Selecione uma categoria';
+  }
+  else {
+    $sql = "SELECT * FROM categoria WHERE idcategoria = 
+    $idcategoria";
+    $consulta = mysqli_query($con, $sql);
+    $categoria2 = mysqli_fetch_assoc($consulta);
+    if (!$categoria2){
+      $msg[] = 'Esta categoria não existe!';
+    }
+  }
 
   if ($produto == '') {
     $msg[] = 'Informe o nome do produto';
@@ -88,9 +101,15 @@ if ($_POST) {
               <div class="form-group">
                 <label for="fcategoria">Categoria</label>
                 <select class="form-control" id="fcategoria" name="categoria">
-                  <option value="">--</option>
-                  <option value="1">Categoria 1</option>
-                  <option value="2">Categoria 2</option>
+                  <option value="0">Selecione uma Categoria</option>
+                  <?php $sql = "SELECT idcategoria, categoria FROM categoria order by categoria";
+                        $q = mysqli_query($con, $sql);
+                        while( $categoria = mysqli_fetch_assoc($q)){
+                        ?>        
+                  <option value="<?php echo $categoria['idcategoria'];?>"
+                    <?php if($idcategoria == $categoria['idcategoria']){ ?> selected <?php } ?>
+                    ><?php echo $categoria['categoria'];?></option>
+                  <?php } ?>
                 </select>
               </div>
             </div>
