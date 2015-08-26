@@ -1,0 +1,21 @@
+# Controller
+
+class NoticiaController extends Zend_Controller_Action {
+	public function cadastrarAction() {}
+}
+
+# Form
+
+class Application_Form_Noticia_Cadastrar extends Zend_Form {
+	public function __construct($options = null) {
+		parent::__construct($options);
+	}
+}
+
+# Redirecionamentos
+
+# Redireciona para um controller e um action. Controller não é obrigatório
+$this->_helper->redirector->gotoSimpleAndExit($action,$controller=null);
+
+# Redireciona para uma URL
+$this->_helper->redirector->gotoUrlAndExit($url);
