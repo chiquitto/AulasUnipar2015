@@ -3,6 +3,23 @@ $(document).ready(init);
 function init() {
 	//window.alert('Oi');
 	carregarUF();
+	$('#frm1').submit(frm1Submit);
+}
+
+function frm1Submit(evento){
+	evento.preventDefault();
+	var idcidade = $('#fidcidade').val();
+	var populacao = $('#fpopulacao').val();
+
+	$.ajax({
+		type: 'POST',
+		url: './api/editarCidade',
+		data: {idcidade : idcidade, populacao : populacao},
+		dataType: 'json',
+		success: function (){
+			window.alert('Informações salvas!');
+		}
+	});
 }
 
 function exibirLoading(){
@@ -75,9 +92,24 @@ function carregarCidadesOK(dados){
 }
 
 function carregarPopulacao() {
-	window.alert('Populacao');
+	//window.alert('Populacao');
+	exibirLoading();
+	var cidadeSelecionada = $('#fidcidade').val();
+	$.ajax({
+		type: 'GET',
+		url: './api/cidade/' +cidadeSelecionada,
+		data: {},
+		dataType: 'json',
+		success: carregarPopulacaoOK,
+	});
 }
 
+function carregarPopulacaoOK(dados){
+	//console.log(dados.dados);
+	var cidade = dados.dados;
+	$('#fpopulacao').val(cidade.populacao);
+	esconderLoading();
+}
 
 
 

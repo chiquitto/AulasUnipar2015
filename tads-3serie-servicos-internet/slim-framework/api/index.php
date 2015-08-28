@@ -151,5 +151,21 @@ $app->post('/cidade', function() use ($app) {
     ));
 });
 
+$app->post('/editarCidade', function () use ($app){
+    $idcidade = (int) $app->request->params('idcidade');
+    $populacao = (int) $app->request->params('populacao');
+
+    $con = Conexao::getInstance();
+    $sql = "update cidade set populacao = :populacao where idcidade = :idcidade";
+    $prepara = $con->prepare($sql);
+    $prepara->bindValue(':idcidade', $idcidade);
+    $prepara->bindValue(':populacao', $populacao);
+    $prepara->execute();
+
+    $app->response->write(saidaJson(array(
+        'idcidade'=> $idcidade)));
+
+});
+
 $app->run();
 sleep(1);
