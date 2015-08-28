@@ -1,0 +1,18 @@
+Criar as páginas index.html e historia.html do site Capitão America, tomando como guia o layout apresentado na figura layout.png.
+
+Pode ser feito em equipes de até 3 alunos.
+
+Enviar até as 11:59h de hoje a atividade finalizada.
+Trabalhos entregues após este horário não serão considerados.
+Enviar a atividade em .zip (não enviar em .rar) para chiquitto+1serie-capamerica@unipar.br
+
+Não se esqueçam de enviar o nome e RA dos integrantes da equipe.
+
+Valor da atividade: ainda não definida
+Trabalhos iguais, ou com trechos copiados serão zerados.
+
+Observação 1: Os arquivos disponibilizados para a atividade não estão completos. Faz parte da atividade a criatividade e o conhecimento em HTML e CSS para resolver os problemas propostos.
+
+Observação 2: Trabalhos entregues fora do prazo ou no email incorreto serão desconsiderados.
+
+Observação 3: A atividade não precisa estar finalizada para ser enviada. Envie o que estiver pronto.

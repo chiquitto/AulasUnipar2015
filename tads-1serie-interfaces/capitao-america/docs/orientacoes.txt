@@ -1,0 +1,37 @@
+O arquivo layout.png possui 4 páginas:
+
+Página 1: Página inicial do site (index.html)
+Página 2: Página da história do Capitão América (historia.html)
+Página 3: Fotos (fotos.html) *
+Página 4: Formulário para enviar uma mensagem para o Capitão América (contato.html) *
+* Páginas ainda não desenhadas
+
+O desenho é composto basicamente de 3 "pedaços":
+
+. Topo (#topo)
+. Corpo (#corpo)
+. Rodapé (#rodape)
+
+O topo e o rodapé são iguais em todas as páginas. A estilização destes elementos fica localizado no estilo.css.
+O corpo varia entre as páginas. Os estilos dos corpos ficam em arquivos CSS específicos. Ex.: No index.html, os estilo ficam no arquivo index.css. No historia.html, os estilos do #corpo ficam em historia.css.
+
+O topo contém uma figura (logo) centralizada, e uma figura de fundo.
+O rodape contém um figura de fundo juntamente com uma cor de fundo. Além disso possui figuras com links para redes sociais. Finalmente possui um texto.
+
+Cores e tamanhos dos elementos podem ser encontrados no arquivo layout.png. Abrir no Fireworks que é possível encontrar essas informações.
+
+Página index.html
+
+O #corpo possui 2 elementos (fotos e história). Cada elemento possui uma figura e um texto indicando ao usuário o significado do link.
+
+Página historia.html
+
+O #corpo possui um titulo (h1), seguido de uma figura ilustrando o assunto, e o texto da história do personagem. O texto completo pode ser encontrado no texto.txt.
+
+Página fotos.html
+Não fazer
+
+Página contato.html
+Não fazer
+
+//
