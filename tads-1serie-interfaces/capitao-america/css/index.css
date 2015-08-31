@@ -1,0 +1,62 @@
+#corpo {
+  width: 100%;
+  padding: 10px;
+}
+
+#historia, #fotos {
+  width: 100%;
+  background-color: #4F718A;
+  padding: 10px;
+  position: relative;
+}
+#fotos {
+  background-color: #E63123;
+  margin-top: 10px;
+}
+
+#historia img,
+#fotos img {
+  width: 100%;
+  display: block;
+}
+
+#historia p,
+#fotos p {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+
+  background-color: rgba(17, 17, 17, 0.8);
+  background-clip: padding-box;
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+  color: #FFFFFF;
+  font-size: 15px;
+  padding: 10px 0 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/
