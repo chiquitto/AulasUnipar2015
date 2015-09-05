@@ -1,0 +1,60 @@
+/* http://www.w3schools.com/css/
+1. Trabalhar na estilizacao do texto <span>
+2. img ficar em tom de cinza
+3. .foto:hover, a figura volta a ficar colorida
+4. Os elementos (.fotos) pares ficar com borda vermelha
+	:nth-child
+*/
+
+#corpo {
+	padding: 10px 10px 0 10px;
+}
+.foto {
+	border: 10px solid #4F718A;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	position: relative;
+}
+.foto:nth-child(2n+0) {
+	border-color: #E63123;
+}
+.foto img {
+	display: block;
+	width: 100%;
+
+	/* tom de cinza */
+	-webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url(grayscale.svg); /* Firefox 4+ */
+  filter: gray; /* IE 6-9 */
+}
+.foto span {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	background-color: rgba(17, 17, 17, 0.8);
+	color: #FFFFFF;
+  font-size: 15px;
+  padding: 10px 0 10px 0;
+	width: 100%;
+}
+
+.foto:hover img {
+	/* remover tom de cinza */
+	-webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  filter: none;
+}
+
+.foto:hover span {
+	background: #000000;
+}
+
