@@ -24,14 +24,14 @@ require './lib/conexao.php';
 <div class="jumbotron">
   <div class="container">
     <h1>TecInfo Unipar</h1>
-    <p>Bem vindo {usuario}</p>
+    <p>Bem vindo <?php echo $_SESSION['nome']; ?></p>
     <p>
       <div class="btn-group">
         <a class="btn btn-primary btn-lg" role="button" href="cidades.php">
           <i class="fa fa-building fa-lg"></i> Cidades
         </a>
       </div>
-    
+
       <div class="btn-group">
         <a class="btn btn-primary btn-lg" role="button" href="clientes.php">
           <i class="fa fa-heart fa-lg"></i> Clientes

@@ -3,6 +3,30 @@
 require './config.php';
 require './lib/funcoes.php';
 
+if ($_POST) {
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
+
+  $sql = "Select idusuario, nome From usuario
+  Where (email = '$email')
+    And (senha = '$senha')
+    And (situacao = '" . USUARIO_ATIVO . "')";
+
+  require 'lib/conexao.php';
+  $consulta = mysqli_query($con, $sql);
+  $usuario = mysqli_fetch_assoc($consulta);
+
+  if ($usuario) {
+    session_start();
+    $_SESSION['logado'] = 1;
+    $_SESSION['idusuario'] = $usuario['idusuario'];
+    $_SESSION['nome'] = $usuario['nome'];
+
+    header('location:index.php');
+    exit;
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,7 +36,7 @@ require './lib/funcoes.php';
     <title>TecInfo Unipar</title>
 
     <?php headCss(); ?>
-    
+
     <style type="text/css">
         body {
             padding-top: 40px;
@@ -22,7 +46,7 @@ require './lib/funcoes.php';
           .container {
             max-width: 330px;
           }
-      
+
           form { margin-bottom: 15px; }
     </style>
   </head>
@@ -48,10 +72,10 @@ require './lib/funcoes.php';
 
             <button type="submit" class="btn btn-primary btn-block">Fazer login</button>
           </form>
-          
+
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col-xs-12">
           <div class="alert alert-info" role="alert">
