@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	border: 1px solid #000;
+}
+
+p { margin-bottom: 20px; }
+
+body {
+	background-image: url(unipar.png);
+	/* background-image: url(http://s2.glbimg.com/Xi8kSNA6D6kcXCQ33yKjMg8_ZD8=/0x0:1304x1080/140x116/s.glbimg.com/jo/g1/f/original/2015/09/25/dolar.jpg); */
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+}
+
+
+
+

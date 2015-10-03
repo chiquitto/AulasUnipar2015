@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	border: 1px solid #000;
+}
+
+#tudo {
+	height: 300px;
+	margin: 0 auto 0 auto;
+	width: 80%;
+}
+
+#q1 {
+	height: 80%;
+	margin: 10%;
+	position: relative;
+	width: 80%;
+}
+
+#q2, #q3 {
+	height: 80%;
+	position: absolute;
+	top: 10%;
+	width: 40%;
+}
+#q2 {
+	left: 10px;
+}
+#q3 {
+	right: 10px;
+}
+
+
+
+
+
+

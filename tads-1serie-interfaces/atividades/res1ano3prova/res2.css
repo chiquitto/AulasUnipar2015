@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	border: 1px solid #000;
+}
+
+#nav {
+	bottom: 0;
+	position:fixed;
+	
+	/*nao pertence a resposta*/
+	background: #000;
+	height: 30px;
+	width: 100%;
+}
+#nav a {
+	color: #FFFFFF;
+	font-size: 12px;
+	text-decoration: none;
+}
+#nav a:hover { text-decoration: underline; }
+
+
+
+
