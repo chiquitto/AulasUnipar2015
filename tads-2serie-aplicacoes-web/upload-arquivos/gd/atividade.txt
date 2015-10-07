@@ -1,0 +1,8 @@
+Montar um programa em PHP que o usuario informe uma largura;
+
+Então o script PHP fica responsável por:
+. calcular a altura, proporcional a largura da imagem que irá ser redimensionada;
+. redimensionar a imagem de acordo com os valores largura e altura;
+. exibir a imagem para o usuário;
+
+
