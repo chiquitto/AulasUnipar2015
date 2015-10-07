@@ -10,7 +10,7 @@
  * @param int $altura Altura da imagem redimensionada
  *
  */
-function criaImg($origem, $destino, $largura, $altura){
+function redimensionarFigura($origem, $destino, $largura, $altura){
         $imgorigem = imagecreatefromjpeg($origem);
         $w = imagesx($imgorigem);
         $h = imagesy($imgorigem);

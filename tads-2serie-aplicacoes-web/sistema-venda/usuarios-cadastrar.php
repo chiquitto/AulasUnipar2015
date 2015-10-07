@@ -37,7 +37,28 @@ if($_POST){
     $msg[] = 'Senha deve ter no minimo 6 caracteres';
   }
 
+  // $_FILES
+  // print_r($_FILES);exit;
+  $pedacos = explode('.', $_FILES['foto']['name']);
+  $ext = strtolower(end($pedacos));
+  if ($ext != 'jpg') {
+    $msg[] = 'A foto deve ter a extensão JPG';
+  }
+
+  // Validar situacao do upload
+  if ($_FILES['foto']['error'] > 0) {
+    $msg[] = 'Erro no upload da foto';
+  }
+
+  // Limitar tamanho do arquivo em 500kb
+  $tamMaximo = 1024 * 500;
+  if ($_FILES['foto']['size'] > $tamMaximo) {
+    $msg[] = 'O tamanho máximo da foto é de 500kb';
+  }
+
   if(!$msg){
+    $senha = senha($senha);
+
     $sql = "INSERT INTO usuario
     (nome, email, senha, situacao)
     VALUES
@@ -49,6 +70,13 @@ if($_POST){
       $msg[] = mysqli_error($con);
     }
     else{
+      $idusuario = mysqli_insert_id($con);
+      $foto = DIRETORIO . "/fotos/usuario$idusuario.jpg";
+      copy($_FILES['foto']['tmp_name'], $foto);
+
+      $fotoP = DIRETORIO . "/fotos/usuariop$idusuario.jpg";
+      redimensionarFigura($foto, $fotoP, 200, 200);
+
       javascriptAlertFim('Registro salvo', 'usuarios.php');
     }
   }
@@ -83,7 +111,7 @@ if($_POST){
       }
       ?>
 
-      <form class="row" role="form" method="post" action="usuarios-cadastrar.php">
+      <form class="row" role="form" method="post" action="usuarios-cadastrar.php" enctype="multipart/form-data">
         <div class="col-xs-12">
 
           <div class="row">
@@ -117,6 +145,8 @@ if($_POST){
               </div>
             </div>
           </div>
+
+          Foto: <input type="file" name="foto">
 
           <div class="row">
             <div class="col-xs-12">

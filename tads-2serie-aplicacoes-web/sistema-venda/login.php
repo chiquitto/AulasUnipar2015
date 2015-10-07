@@ -5,7 +5,7 @@ require './lib/funcoes.php';
 
 if ($_POST) {
   $email = $_POST['email'];
-  $senha = $_POST['senha'];
+  $senha = senha($_POST['senha']);
 
   $sql = "Select idusuario, nome From usuario
   Where (email = '$email')

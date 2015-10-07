@@ -1,6 +1,6 @@
 <?php
 
-define('DIRETORIO', '');
+define('DIRETORIO', realpath('.'));
 
 /*
 Temas: default, bootstrap
@@ -12,7 +12,7 @@ define('TWITTER_BOOTSTRAP_TEMA', 'readable');
 
 define('BD_HOST', 'localhost');
 define('BD_USUARIO', 'root');
-define('BD_SENHA', '123456');
+define('BD_SENHA', '');
 define('BD_NOME', 'vendas');
 
 define('CATEGORIA_INATIVO', '0');
