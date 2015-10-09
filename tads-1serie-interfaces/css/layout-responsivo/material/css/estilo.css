@@ -4,37 +4,37 @@
     padding: 0;
 }
 
-#conteudo div {
-    background: red;
-    float: left;
-    margin: 1%;
-    width: 31%;
+#conteudo {
+  background-color: red;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 320px;
 }
-
 #conteudo img {
+  background-color: green;
+  display: block;
+  width: 100%;
+}
+
+@media (min-width:768px) {
+  #conteudo {
+    overflow: hidden;
     width: 100%;
+  }
+  #conteudo div {
+    float: left;
+    width: 50%;
+  }
 }
 
-@media print {
-    #conteudo div {
-        background: none;
-    }
-}
 
-@media (min-width: 500px) {
-    #conteudo div {
-        width: 23%
-    }
-}
 
-@media (min-width: 1000px) {
-    #conteudo div {
-        width: 18%
-    }
-}
 
-@media (min-width: 1280px) {
-    #conteudo div {
-        width: 14%
-    }
-}
+
+
+
+
+
+
+/**/
