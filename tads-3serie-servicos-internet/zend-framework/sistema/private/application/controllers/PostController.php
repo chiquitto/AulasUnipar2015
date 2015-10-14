@@ -8,6 +8,12 @@ class PostController extends Zend_Controller_Action {
 
     public function indexAction() {
         
+       $postTB = new Application_Model_DbTable_Post();
+       
+       $post = $postTB->fetchAll(null, 'idpost desc');
+       
+       $this->view->posts = $post;
+        
     }
 
     // /public/post/cadastrar
@@ -19,7 +25,7 @@ class PostController extends Zend_Controller_Action {
                 $dados = $form->getValues();
                 
                 $inserir = array(
-                    'idcategoria' => 1,
+                    'idcategoria' => $dados['idcategoria'],
                     'titulo' => $dados['titulo'],
                     'texto' => $dados['texto']
                 );

@@ -7,7 +7,11 @@ class CategoriaController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
+        $categoria = new Application_Model_DbTable_Categoria();
         
+        $categorias = $categoria->fetchAll();
+        
+        $this->view->categorias = $categorias;
     }
 
     // /public/categoria/cadastrar

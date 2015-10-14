@@ -1,3 +1,25 @@
 <h1>Post</h1>
 
-Pesquisar post
+<table border="1">
+    <tr>
+        <td>Idpost</td>
+        <td>IdCategoria</td>
+        <td>Titulo</td>
+        <td>Texto</td>
+        <td></td>
+    </tr>
+
+
+<?php 
+    
+   foreach($this->posts as $post){?>
+    <tr>
+     <td><?php echo $post->idpost?></td>
+     <td><?php echo $post->idcategoria ?></td>
+     <td><?php echo $post->titulo?></td>
+     <td><?php echo $post->texto?></td>
+     <td><a href="post/editar/idpost/<?php echo $post->idpost?>">Editar</a></td>
+    </tr>
+    
+   <?php } ?>
+</table>

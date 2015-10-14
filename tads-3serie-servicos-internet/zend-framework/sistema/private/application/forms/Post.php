@@ -5,10 +5,29 @@ class Application_Form_Post extends Zend_Form {
     public function init() {
         $naoVazio = new Zend_Validate_NotEmpty();
         
-        $idcategoria = new Zend_Form_Element_Text('idcategoria', array(
+        $categoriaTB = new Application_Model_DbTable_Categoria();
+        
+        $categorias = $categoriaTB->fetchAll(null, 'categoria');
+        
+        $array = array(0=>'Selecione uma categoria');
+        
+        foreach($categorias as $categoria)
+        {
+            $array[$categoria->idcategoria] = $categoria->categoria;
+        }
+        
+        $idcategoria = new Zend_Form_Element_Select('idcategoria', array(
             'label' => 'Categoria:',
-            'required' => true
+            'required' => true,
+            'multioptions' => $array, 
         ));
+        
+        $idcategoria->addValidator($naoVazio);
+        
+        $filter = new Zend_Filter_Null();
+        
+        $idcategoria->addFilter($filter);
+        
         $this->addElement($idcategoria);
         
         $titulo = new Zend_Form_Element_Text('titulo', array(

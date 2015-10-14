@@ -1,3 +1,20 @@
 <h1>Categorias</h1>
+<table>
+    <thead>
+        <tr>
+            <td>Id Categoria</td>
+            <td>Categoria</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($this->categorias as $categoria) { ?>
+            <tr>  
+                <td><?php echo $categoria->idcategoria; ?></td>
+                <td><?php echo $categoria->categoria; ?></td>   
+                <td><a href="categoria/editar/idcategoria/<?php echo $categoria->idcategoria; ?>">Editar</a></td>
+            </tr>
 
-Pesquisar categorias
+        <?php } ?>
+    </tbody>
+</table>
