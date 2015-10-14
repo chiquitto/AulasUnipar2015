@@ -11,24 +11,46 @@
   padding: 10px;
   width: 320px;
 }
+#conteudo div div {
+  margin-bottom: 10px;
+}
 #conteudo img {
   background-color: green;
   display: block;
   width: 100%;
 }
 
-@media (min-width:768px) {
+@media (min-width:768px) and (max-width:991px) {
   #conteudo {
     overflow: hidden;
     width: 100%;
   }
-  #conteudo div {
+  #conteudo div div {
     float: left;
     width: 50%;
   }
+  #conteudo div div:nth-child(2n) {
+    padding-left: 5px;
+  }
+  #conteudo div div:nth-child(2n+1) {
+    padding-right: 5px;
+  }
 }
 
-
+@media (min-width:992px) {
+  #conteudo {
+    overflow: hidden;
+    width: 100%;
+  }
+  #conteudo div div {
+    float: left;
+    padding: 0 5px 0 5px;
+    width: 33.333333333%;
+  }
+  #dentro {
+    margin: 0 -5px 0 -5px;
+  }
+}
 
 
 
