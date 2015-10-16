@@ -48,6 +48,9 @@ class Application_Form_Post extends Zend_Form {
             'label' => 'Salvar'
         ));
         $this->addElement($botao);
+        
+        $idpost = new Zend_Form_Element_Hidden('idpost');
+        $this->addElement($idpost);
     }
 
 }

@@ -3,7 +3,7 @@
 <table border="1">
     <tr>
         <td>Idpost</td>
-        <td>IdCategoria</td>
+        <td>Categoria</td>
         <td>Titulo</td>
         <td>Texto</td>
         <td></td>
@@ -11,15 +11,13 @@
 
 
 <?php 
-    
    foreach($this->posts as $post){?>
     <tr>
-     <td><?php echo $post->idpost?></td>
-     <td><?php echo $post->idcategoria ?></td>
-     <td><?php echo $post->titulo?></td>
-     <td><?php echo $post->texto?></td>
-     <td><a href="post/editar/idpost/<?php echo $post->idpost?>">Editar</a></td>
+     <td><?php echo $post['idpost']?></td>
+     <td><?php echo $post['categoria'] ?></td>
+     <td><?php echo $post['titulo']?></td>
+     <td><?php echo $post['texto']?></td>
+     <td><a href="post/editar/idpost/<?php echo $post['idpost']?>">Editar</a></td>
     </tr>
-    
    <?php } ?>
 </table>
