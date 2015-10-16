@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	background-color: red;
+	height: 100px;
+	margin: 2.5% auto 2.5% auto;
+	transition: all 2s ease;
+	width: 100px;
+}
+
+#c1:hover {
+	background-color: blue;
+}
+
+#c2:hover {
+	width: 600px;
+}

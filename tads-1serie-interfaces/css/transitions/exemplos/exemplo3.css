@@ -1,0 +1,38 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#nav {
+	background-color: #DDDDDD;
+	height: 30px;
+	font-family: Arial;
+	margin: 10px auto 10px auto;
+	width: 80%;
+}
+
+#nav li {
+	display: block;
+}
+#nav>li {
+	float: left;
+	height: 100%;
+	line-height: 30px;
+	position: relative;
+	text-align: center;
+	width: 20%;
+}
+#nav>li a {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+#nav li:hover {
+	background-color: rgba(255,0,0,0.1);
+}

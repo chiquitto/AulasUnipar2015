@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1, p {
+	width: 60%;
+}
+
+h1 {
+	margin: 15px auto 15px auto;
+}
+
+p {
+	margin: 10px auto 10px auto;
+	text-align: justify;
+}
+
+p:hover {
+	background-color: red;
+}
