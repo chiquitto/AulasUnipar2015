@@ -1,3 +1,11 @@
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `idusuario` INT NOT NULL AUTO_INCREMENT COMMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `login` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idusuario`) )
+ENGINE = InnoDB;
+
 CREATE TABLE IF NOT EXISTS `categoria` (
   `idcategoria` INT NOT NULL AUTO_INCREMENT,
   `categoria` VARCHAR(45) NOT NULL,
@@ -17,6 +25,8 @@ CREATE TABLE IF NOT EXISTS `post` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+INSERT INTO `usuario` (`idusuario`, `nome`, `login`, `senha`) VALUES (NULL, 'Alisson Chiquitto', 'admin', 'admin');
 
 INSERT INTO `categoria` (`idcategoria`, `categoria`) VALUES (NULL, 'Esportes');
 INSERT INTO `categoria` (`idcategoria`, `categoria`) VALUES (NULL, 'Politica');
