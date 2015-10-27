@@ -3,7 +3,10 @@
 class PostController extends Zend_Controller_Action {
 
     public function init() {
-        
+        $auth = Zend_Auth::getInstance();
+        if (!$auth->hasIdentity()){
+            $this->_helper->redirector->gotoSimpleAndExit('index', 'login');
+        }
     }
 
     public function indexAction() {
