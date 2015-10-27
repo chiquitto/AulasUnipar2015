@@ -1,0 +1,5 @@
+
+Quando clicar em salvar
+  1. Verificar se o campo email é igual ao campo "Repita o Email";
+  2. Verificar se o campo senha é igual ao campo "Repita a Senha";
+  3. Se alguma das verificações falhar, o usuário deve ser avisado da falha e o formulario não deve ser enviado;

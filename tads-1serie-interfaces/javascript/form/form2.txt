@@ -1,0 +1,7 @@
+Formulario 2
+
+1. O usuário deve selecionar entre cadastrar uma pessoa F ou J;
+  Se o usuario escolher Pessoa F, então mostrar formulario de Pessoa F
+  Se o usuario escolher Pessoa J, então mostrar formulario de Pessoa J
+
+2. Validar todo o resto das informações
