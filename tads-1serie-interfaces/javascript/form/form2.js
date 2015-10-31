@@ -1,12 +1,13 @@
 window.onload = iniciar;
 
-function iniciar() {
-	document.getElementById('ftipoF').onclick = manipularRadios;
-	
-	document.getElementById('ftipoJ').onclick = manipularRadios;
+function iniciar(evento) {
+	document.getElementById('ftipoF').onclick = manipularRadio;
+	document.getElementById('ftipoJ').onclick = manipularRadio;
+	document.getElementById('fform').onsubmit = manipularSubmit;
 }
 
-function manipularRadios(evento) {
+function manipularRadio(evento) {
+	//console.log(evento.target.value);
 	if (evento.target.value == 'F') {
 		mostrarFormF();
 	}
@@ -14,12 +15,6 @@ function manipularRadios(evento) {
 		mostrarFormJ();
 	}
 }
-
-/*#pessoaF,#pessoaJ,#pessoaFJ {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 1s ease;
-}*/
 
 function mostrarFormF() {
 	document.getElementById('pessoaF').style.maxHeight = '1000px';
@@ -32,6 +27,56 @@ function mostrarFormJ() {
 	document.getElementById('pessoaJ').style.maxHeight = '1000px';
 	document.getElementById('pessoaFJ').style.maxHeight = '1000px';
 }
+
+function manipularSubmit(evento) {
+	var ok = true;
+
+	var ftipoF = document.getElementById('ftipoF');
+	if (ftipoF.checked) {
+		ok = manipularSubmitF();
+	}
+	else {
+		ok = false;
+	}
+	
+	if (ok == false) {
+		evento.preventDefault();
+		return ;
+	}
+}
+
+function manipularSubmitF() {
+	var nome = document.getElementById('fnome');
+	if (nome.value == '') {
+		window.alert('Nome deve ser preenchido');
+		return false;
+	}
+	
+	var cpf = document.getElementById ('cpf');
+	if (cpf.value == ''){
+		window.alert ('CPF deve ser preenchido');
+		return false;
+	}
+	else if (TestaCPF(cpf.value) == false) {
+		window.alert('O CPF informado é invalido');
+		//cpf.focus();
+		cpf.select();
+		return false;
+	}
+}
+
+function manipularSubmitJ() {
+}
+
+function manipularSubmitFJ() {
+}
+
+
+
+
+
+
+
 
 
 
