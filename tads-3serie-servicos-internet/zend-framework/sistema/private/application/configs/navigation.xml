@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <nav>
+        <noticia>
+            <label>Noticias</label>
+            <controller>post</controller>
+            <action>index</action>
+            <pages>
+                <noticiaCad>
+                    <label>Cadastrar noticia</label>
+                    <controller>post</controller>
+                    <action>cadastrar</action>
+                </noticiaCad>
+            </pages>
+        </noticia>
+        <categoria>
+            <label>Categoria</label>
+            <controller>categoria</controller>
+            <action>index</action>
+        </categoria>
+    </nav>
+</config>

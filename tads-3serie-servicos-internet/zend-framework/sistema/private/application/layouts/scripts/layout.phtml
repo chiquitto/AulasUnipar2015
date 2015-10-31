@@ -17,6 +17,14 @@
             true) ?>">Guestbook</a>
     </div>
 </div>
+    
+    <div>
+        <?php echo $this->navigation(); ?>
+    </div>
+    <div>
+        <?php echo $this->navigation()->breadcrumbs()->render(); ?>
+    </div>
+    <?php //echo $this->navigation()->sitemap(); ?>
 
 <?php echo $this->layout()->content ?>
 
