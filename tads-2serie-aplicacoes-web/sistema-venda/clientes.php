@@ -34,10 +34,16 @@ require './lib/funcoes.php';
               <h3 class="panel-title">Clientes</h3>
             </div>
 
+            <?php
+            $q = '';
+            if (isset($_GET['q'])) {
+              $q = trim($_GET['q']);
+            }
+            ?>
             <form class="panel-body form-inline" role="form" method="get" action="">
               <div class="form-group">
                 <label class="sr-only" for="fq">Pesquisa</label>
-                <input type="search" class="form-control" id="fq" name="q" placeholder="Pesquisa">
+                <input type="search" class="form-control" id="fq" name="q" placeholder="Pesquisa" value="<?php echo $q; ?>">
               </div>
               <button type="submit" class="btn btn-default">Pesquisar</button>
             </form>
@@ -53,20 +59,39 @@ require './lib/funcoes.php';
                 </tr>
               </thead>
               <tbody>
+                <?php
+                $sql = "Select
+c.idcliente, c.nome, c.email, c.situacao, cid.cidade, cid.uf
+From cliente c
+Inner Join cidade cid
+On cid.idcidade = c.idcidade";
+
+                if ($q != '') {
+                  $sql .= " Where (c.nome like '%$q%')";
+                }
+                
+                $consulta = mysqli_query($con, $sql);
+
+                 while($linha = mysqli_fetch_assoc($consulta)) {
+                ?>
                 <tr>
-                  <td>{idcliente}</td>
+                  <td><?php echo $linha['idcliente']; ?></td>
                   <td>
+                    <?php if ($linha['situacao'] == CATEGORIA_ATIVO) { ?>
                     <span class="label label-success">ativo</span>
+                    <?php } else { ?>
                     <span class="label label-warning">inativo</span>
+                    <?php } ?>
                   </td>
-                  <td>{cliente}</td>
-                  <td>{cidade}</td>
+                  <td><?php echo $linha['nome']; ?></td>
+                  <td><?php echo $linha['cidade']; ?></td>
                   <td>
-                    <a href="clientes-editar.php?idcliente={idcliente}" title="Editar"><i class="fa fa-edit fa-lg"></i></a>
-                    <a href="clientes-apagar.php?idcliente={idcliente}" title="Remover"><i class="fa fa-times fa-lg"></i></a>
-                    <a href="venda-nova.php?idcliente={idcliente}" title="Nova Venda"><i class="fa fa-share fa-lg"></i></a>
+                    <a href="clientes-editar.php?idcliente=<?php echo $linha['idcliente']; ?>" title="Editar"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="clientes-apagar.php?idcliente=<?php echo $linha['idcliente']; ?>" title="Remover"><i class="fa fa-times fa-lg"></i></a>
+                    <a href="venda-nova.php?idcliente=<?php echo $linha['idcliente']; ?>" title="Nova Venda"><i class="fa fa-share fa-lg"></i></a>
                   </td>
                 </tr>
+                 <?php } ?>
               </tbody>
             </table>
           </div>
