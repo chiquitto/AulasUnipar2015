@@ -1,7 +1,5 @@
 *~
 .vagrant
+/tads-2serie-aplicacoes-web/sistema-venda/nbproject/
 /tads-3serie-servicos-internet/zend-framework/sistema/nbproject/
 /tads-3serie-servicos-internet/zend-framework/sistema/private/library/Zend
-
-
-/tads-2serie-aplicacoes-web/sistema-venda/nbproject/private/

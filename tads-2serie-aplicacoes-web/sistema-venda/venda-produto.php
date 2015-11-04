@@ -6,6 +6,24 @@ require './lib/conexao.php';
 
 $msgOk = array();
 $msgAviso = array();
+
+$idvenda = $_SESSION['idvenda'];
+
+$sql = "SELECT
+  idvenda, data, idcliente, situacao, idusuario
+FROM venda
+WHERE
+  (idvenda = $idvenda)
+  AND (situacao = '" . VENDA_ABERTA . "')
+";
+
+$q = mysqli_query($con, $sql);
+$venda = mysqli_fetch_assoc($q);
+
+if(!$venda){
+  javascriptAlertFim('Venda inexistente', 'vendas.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,7 +43,7 @@ $msgAviso = array();
       <div class="row">
         <div class="col-xs-12">
           <div class="page-header">
-            <h1><i class="fa fa-shopping-cart"></i> Andamento da venda #{idvenda}</h1>
+            <h1><i class="fa fa-shopping-cart"></i> Andamento da venda #<?php echo $idvenda; ?></h1>
           </div>
         </div>
       </div>
@@ -59,7 +77,16 @@ $msgAviso = array();
                       <label for="fidproduto">Produto</label>
                       <select id="fidproduto" name="idproduto" class="form-control" required>
                         <option value="">Selecione um produto</option>
-                        <option value="{idproduto}">{produto} ({preco})</option>
+                        <?php
+                        $sql = "SELECT idproduto, produto, precovenda
+                                FROM produto WHERE situacao = '" .
+                                PRODUTO_ATIVO . "' ORDER BY produto ";
+                        $q = mysqli_query($con,$sql);
+                        while ($produto = mysqli_fetch_assoc($q)) {
+                            
+                        ?>
+                        <option value="<?php echo $produto['idproduto']; ?>"><?php echo $produto['produto']; ?> (R$ <?php echo $produto['precovenda']; ?>)</option>
+                        <?php } ?>
                       </select>
                     </div>
                   </div>
