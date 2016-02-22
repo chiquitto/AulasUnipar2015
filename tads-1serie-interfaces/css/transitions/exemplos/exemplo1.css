@@ -15,8 +15,10 @@ h1 {
 p {
 	margin: 10px auto 10px auto;
 	text-align: justify;
+	transition: background 0.5s ease, width 1s cubic-bezier(1,.03,.42,1);
 }
 
 p:hover {
 	background-color: red;
+	width: 40%;
 }

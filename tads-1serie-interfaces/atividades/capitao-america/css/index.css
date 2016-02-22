@@ -1,6 +1,8 @@
 #corpo {
   width: 100%;
   padding: 10px;
+  background-color: yellow;
+  overflow: auto;
 }
 
 #historia, #fotos {
